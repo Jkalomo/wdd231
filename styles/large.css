@@ -1,0 +1,118 @@
+@media screen and (min-width: 768px) {
+
+    /* Navigation */
+    #menu-button {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 1rem 2rem;
+    }
+
+    /* Header */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 1rem 3rem;
+    }
+
+    /* Main Content */
+    main {
+        padding: 2rem;
+    }
+
+    /* Course Cards */
+    #course-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .course-card {
+        padding: 1.5rem;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .filter-buttons button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Profile Section */
+    .profile-card {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Resources */
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .resource-card {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+    }
+
+    .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #course-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    .course-header h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    nav,
+    .filter-buttons,
+    footer,
+    .social-links {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: none;
+    }
+
+    .course-card {
+        page-break-inside: avoid;
+        border: 1pt solid #000;
+        box-shadow: none;
+    }
+
+    main {
+        padding: 0;
+    }
+}

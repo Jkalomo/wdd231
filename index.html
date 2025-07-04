@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 - Web Frontend Development course home page">
+    <meta name="author" content="Jabulani Kalomo">
+    <title>WDD 231 - Web Frontend Development</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Site logo" width="50">
+        <span>Your Name</span>
+        <button id="menu-button" aria-label="Navigation Menu">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Web Frontend Development</h1>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="profile-card">
+                <img src="images/profile.jpg" alt="Profile picture" width="150">
+                <p>Hello! I'm a web development student passionate about creating accessible, responsive websites.</p>
+            </div>
+        </section>
+
+        <section id="courses">
+            <h2>Course Progress</h2>
+            <div class="filter-buttons">
+                <button id="all" class="active">All Courses</button>
+                <button id="wdd">WDD Courses</button>
+                <button id="cse">CSE Courses</button>
+            </div>
+            <div id="course-cards"></div>
+            <p class="credit-total">Total Credits: <span id="total-credits">0</span></p>
+        </section>
+
+        <section id="resources">
+            <h2>Learning Resources</h2>
+            <div class="resource-grid">
+                <a href="https://developer.mozilla.org/" class="resource-card">
+                    <h3>MDN Web Docs</h3>
+                    <p>Comprehensive web development reference</p>
+                </a>
+                <a href="https://www.w3schools.com/" class="resource-card">
+                    <h3>W3Schools</h3>
+                    <p>Interactive coding tutorials</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub" width="32">
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn" width="32">
+            </a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> | Jabulani Kalomo | Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
