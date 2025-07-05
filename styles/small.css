@@ -1,114 +1,191 @@
+/* Global Reset and Accessibility */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
-    padding: 1rem;
-    background-color: #FFFFFF;
-    /* Changed from #f4f4f4 to white for better contrast */
-    color: #000000;
-    /* High contrast black text */
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+}
+
+/* Header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #0B3D91;
+    background-color: #002855;
     /* Deep blue */
-    color: #FFFFFF;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     width: 40px;
 }
 
+.name {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#menu {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#menu:hover {
+    color: #66ccff;
+}
+
+/* Navigation */
 nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
-    background-color: #0B3D91;
+    background-color: #003366;
     padding: 1rem;
+    margin-top: -1px;
 }
 
 nav a {
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #005599;
 }
 
 nav.show {
     display: flex;
 }
 
-#menu {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-}
-
+/* Main Content */
 main {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
+h1,
+h2 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0.75rem;
+    color: #002855;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Filter Buttons */
 .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
 button {
-    margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #005A9C;
-    /* Lighter blue, still passes AAA */
-    color: #FFFFFF;
+    padding: 0.5rem 1.2rem;
+    background-color: #004080;
+    color: #ffffff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #004080;
-    /* Darker hover for better visibility */
+    background-color: #0059b3;
+    transform: translateY(-2px);
 }
 
+/* Course Cards */
 #courseContainer {
     display: grid;
     gap: 1rem;
 }
 
-.completed {
-    background-color: #E6F2FF;
-    /* Very light blue background */
-    border-left: 6px solid #1E90FF;
-    /* Dodger blue border */
+.completed,
+.incomplete {
     padding: 1rem;
-    color: #000000;
-    /* Strong contrast */
+    border-left: 6px solid;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.completed {
+    background-color: #e6f4ea;
+    border-color: #2e7d32;
+    color: #1b5e20;
 }
 
 .incomplete {
-    background-color: #FFEEEE;
-    /* Light red/pink */
-    border-left: 6px solid #CC0000;
-    /* Deep red border */
-    padding: 1rem;
-    color: #000000;
+    background-color: #fdecea;
+    border-color: #c62828;
+    color: #b71c1c;
 }
 
+/* Footer */
 footer {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #0B3D91;
-    color: #FFFFFF;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #002855;
+    color: #ffffff;
     text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .socials {
+    margin-bottom: 0.5rem;
 }
 
 footer .socials a {
     margin: 0 0.5rem;
-    color: #FFFFFF;
-    text-decoration: underline; }
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+    color: #66ccff;
+}
+
+/* Responsive Layout Improvements */
+@media (min-width: 500px) {
+    #courseContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    #courseContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
