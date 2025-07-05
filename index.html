@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Jabulani Kalomo - WDD 231 Web Frontend Development course portal">
-    <meta name="author" content="Jabulani Kalomo">
-    <title>Jabulani Kalomo | WDD 231 - Web Frontend Development</title>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WDD 231 Course Homepage by Jabulani Kalomo" />
+    <meta name="author" content="Jabulani Kalomo" />
+    <title>WDD 231 Homepage</title>
 
-    <!-- Optimized Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)" />
+
+    <!-- Local JS -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
@@ -25,73 +25,50 @@
 
 <body>
     <header>
-        <!-- Inline SVG logo (optimized) -->
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='15' fill='%232563eb'/%3E%3Ctext x='50%25' y='60%25' font-family='Playfair Display' font-size='40' font-weight='700' text-anchor='middle' fill='white'%3EJK%3C/text%3E%3C/svg%3E"
-            alt="Jabulani Kalomo Portfolio Logo" width="50">
-        <span>Jabulani Kalomo</span>
-        <button id="menu-button" aria-label="Navigation Menu">☰</button>
+        <img src="images/logo.svg" alt="Site Logo" class="logo" />
+        <span class="name" aria-label="Site owner">Jabulani Kalomo</span>
+        <button id="menu" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#">Chamber</a></li>
-            <li><a href="#">Final</a></li>
-        </ul>
+    <nav id="nav" aria-label="Primary Navigation">
+        <a href="index.html">Home</a>
+        <a href="#">Chamber</a>
+        <a href="#">Final</a>
     </nav>
 
     <main>
-        <h1>Web Frontend Development - Course Portal</h1>
+        <h1>Home</h1>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="profile-card">
-                <!-- Optimized profile image -->
-                <img src="images/jabulani.jpg" alt="Professional portrait of Jabulani Kalomo" width="150">
-                <p>Hello! I'm Jabulani Kalomo, a web development student passionate about creating accessible,
-                    responsive websites.</p>
-            </div>
+        <section aria-labelledby="welcome">
+            <h2 id="welcome">Welcome to WDD231</h2>
+            <p>This homepage demonstrates my skills in HTML, CSS, and JavaScript for frontend development.</p>
         </section>
 
-        <section id="courses">
-            <h2>Course Progress</h2>
-            <div class="filter-buttons">
-                <button id="all" class="active">All Courses</button>
-                <button id="wdd">WDD Courses</button>
-                <button id="cse">CSE Courses</button>
+        <section aria-labelledby="certificates">
+            <h2 id="certificates">Certificate Courses</h2>
+            <div class="filters" role="group" aria-label="Course Filters">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
             </div>
-            <div id="course-cards" aria-live="polite"></div>
-            <p class="credit-total">Total Credits: <span id="total-credits">0</span></p>
+            <div id="courseContainer" aria-live="polite"></div>
+            <p id="creditTotal"></p>
         </section>
 
-        <section id="resources">
-            <h2>Learning Resources</h2>
-            <div class="resource-grid">
-                <a href="https://developer.mozilla.org/" class="resource-card">
-                    <h3>MDN Web Docs</h3>
-                    <p>Comprehensive web development reference</p>
-                </a>
-                <a href="https://www.w3schools.com/" class="resource-card">
-                    <h3>W3Schools</h3>
-                    <p>Interactive coding tutorials</p>
-                </a>
-            </div>
+        <section aria-labelledby="contact">
+            <h2 id="contact">Contact Me</h2>
+            <p>Connect via GitHub or LinkedIn below.</p>
         </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <!-- Optimized inline SVGs -->
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub profile">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23181717' d='M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.1-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.7.8 1.1 1.9 1.1 3.2 0 4.6-4.6 5.6-5.6 5.6-5.9 0-.3 0-1.4-.1-2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z'/%3E%3C/svg%3E"
-                    alt="Visit my GitHub profile" width="32">
-            </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn profile">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230A66C2' d='M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.3A1.8 1.8 0 1 1 8.3 6.5a1.8 1.8 0 0 1-1.8 1.8zM19 19h-3v-4.8c0-1.2-.4-2-1.5-2A1.6 1.6 0 0 0 13 16v4h-3v-9h3v1.2a3 3 0 0 1 2.7-1.5c2 0 3.3 1.3 3.3 4z'/%3E%3C/svg%3E"
-                    alt="Visit my LinkedIn profile" width="32">
-            </a>
+        <div class="socials" aria-label="Social Links">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub Profile">GitHub</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn Profile">LinkedIn</a>
         </div>
-        <p>&copy; <span id="currentyear"></span> | Jabulani Kalomo | Zimbabwe</p>
+        <p>&copy; <span id="year"></span> Jabulani Kalomo | Zimbabwe</p>
         <p id="lastModified"></p>
     </footer>
 </body>
