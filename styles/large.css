@@ -116,3 +116,25 @@
         padding: 0;
     }
 }
+/* Enhanced Credits Display for Desktop */
+.credits {
+    font-size: 1.1rem;
+}
+
+.credit-unit {
+    font-size: 0.75rem;
+}
+
+/* Improved Header Layout */
+.course-header {
+    align-items: center;
+}
+
+.course-header h3 {
+    font-size: 1.2rem;
+}
+
+/* Better Status Icon Spacing */
+.status-icon {
+    margin-right: 6px;
+}

@@ -163,6 +163,48 @@ section {
     font-size: 1.1rem;
 }
 
+/* Course Card Credits */
+.credits {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    display: inline-flex;
+    align-items: baseline;
+    white-space: nowrap;
+}
+
+.credit-unit {
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-left: 2px;
+    opacity: 0.8;
+}
+
+/* Status Icon Alignment */
+.status-icon {
+    vertical-align: middle;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+
+/* Course Header Layout */
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.course-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+
+
 .credits {
     background: white;
     color: var(--primary);
