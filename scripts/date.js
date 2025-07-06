@@ -1,4 +1,14 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = `Last modified: ${document.lastModified}`;
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById("year");
+    const lastModifiedElement = document.getElementById("lastModified");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = `Last modified: ${document.lastModified}`;
+    }
+});
 
   

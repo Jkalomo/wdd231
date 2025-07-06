@@ -1,3 +1,8 @@
-document.getElementById("menu").addEventListener("click", () => {
-    document.getElementById("nav").classList.toggle("show");
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById("menu");
+    const navigation = document.getElementById("nav");
+
+    menuButton.addEventListener("click", () => {
+        navigation.classList.toggle("show");
+    });
 });
