@@ -1,16 +1,18 @@
 /* ===== CHAMBER BASE STYLES ===== */
 :root {
+    /* Adjusted for better button visibility */
     --primary: #002855;
-    /* Dark blue */
-    --secondary: #004080;
-    /* Medium blue */
-    --accent: #ffd700;
-    /* Gold */
-    --light: #f4f4f4;
-    /* Light gray */
-    --dark: #1a1a1a;
-    /* Dark text */
+    /* Slightly lighter blue */
+    --secondary: #0056b3;
+    /* More vibrant blue (from #003366) */
+    --secondary-dark: #004080;
+    /* Darker hover state */
+    --accent: #ffc107;
+    /* Gold remains unchanged */
+    --light: #f8f9fa;
+    --dark: #121212;
     --white: #ffffff;
+    --footer-link-hover: #80d8ff;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -27,6 +29,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     background-color: var(--light);
     color: var(--dark);
@@ -38,21 +41,36 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: currentColor;
+    transition: color 0.3s ease;
 }
 
 button {
     font-family: inherit;
+    font-size: inherit;
     cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+    font-family: 'Lato', sans-serif;
     line-height: 1.2;
     color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }

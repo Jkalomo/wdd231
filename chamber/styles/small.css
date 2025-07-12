@@ -1,21 +1,28 @@
-/* Mobile-First Styles */
-/* Variables */
+/* ===== MOBILE-FIRST STYLES ===== */
 :root {
-    --primary: #2c3e50;
-    --secondary: #27ae60;
-    --secondary-dark: #1e8449;
-    --accent: #e74c3c;
+    /* Updated Color Palette */
+    --primary: #002855;
+    /* Header/Footer */
+    --secondary: #0056b3;
+    /* Buttons/Nav (brighter blue) */
+    --secondary-dark: #004080;
+    /* Hover state */
+    --accent: #ffc107;
+    /* Gold accents */
+    --light: #f8f9fa;
+    /* Background */
+    --dark: #121212;
+    /* Text */
     --white: #ffffff;
-    --light: #ecf0f1;
-    --dark: #2c3e50;
+    --footer-link-hover: #80d8ff;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     line-height: 1.6;
+    background-color: var(--light);
     color: var(--dark);
     margin: 0;
     padding: 0;
@@ -36,13 +43,13 @@ header {
 }
 
 .logo {
-    width: 50px;
+    width: 60px;
     height: auto;
 }
 
 .site-name {
     font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
@@ -52,20 +59,22 @@ header {
     border: none;
     color: var(--white);
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#menu:hover {
+    transform: scale(1.1);
 }
 
 /* Navigation */
 nav {
     display: none;
-    flex-direction: column;
-    gap: 0.5rem;
     background-color: var(--secondary);
     padding: 1rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 nav.show {
-    display: flex;
+    display: block;
 }
 
 nav ul {
@@ -76,9 +85,9 @@ nav ul {
 
 nav a {
     color: var(--white);
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     text-decoration: none;
     display: block;
     font-weight: 500;
@@ -86,83 +95,92 @@ nav a {
 
 nav a:hover {
     background-color: var(--secondary-dark);
+    transform: translateX(5px);
 }
 
 /* Main Content */
 main {
     flex: 1;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 h1,
 h2,
 h3 {
     font-family: 'Lato', sans-serif;
+    margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 1.8rem;
-    margin: 0.5rem 0 1rem;
+    font-size: 2rem;
     color: var(--primary);
-    font-weight: 700;
 }
 
-/* Directory Page Specific */
+/* Buttons - Updated with Vibrant Colors */
 .view-options {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .view-options button {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     background-color: var(--secondary);
     color: var(--white);
     border: none;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
+    transition: all 0.2s ease-out;
+    box-shadow: var(--shadow);
 }
 
 .view-options button.active {
     background-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .view-options button:hover {
     background-color: var(--secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Member Cards */
 .member-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
 }
 
 .member-card img {
-    max-width: 100px;
+    width: 100%;
+    max-width: 150px;
     height: auto;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     display: block;
 }
 
 .member-content {
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .member-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .member-content p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
 }
 
 .member-content a {
@@ -180,33 +198,34 @@ footer {
     background-color: var(--primary);
     color: var(--white);
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-family: 'Roboto', sans-serif;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .social-links a {
     color: var(--white);
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s;
+    font-size: 1.1rem;
 }
 
 .social-links a:hover {
-    color: #66ccff;
+    color: var(--footer-link-hover);
+    text-decoration: underline;
 }
 
 /* Responsive Views */
 .grid-view {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .list-view .member-card {
@@ -215,27 +234,14 @@ footer {
 }
 
 .list-view .member-card img {
-    max-width: 100px;
-    height: auto;
-    margin: 1rem;
+    margin: 1.5rem;
     border-right: 1px solid #ddd;
+    padding-right: 1.5rem;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .grid-view {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 768px) {
-    #menu {
-        display: none;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
     }
 
     nav ul {
@@ -243,7 +249,28 @@ footer {
         gap: 1rem;
     }
 
+    nav a {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (min-width: 900px) {
+    #menu {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
     .grid-view {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid-view {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

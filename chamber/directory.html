@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US"> 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Business directory for the Bulawayo Chamber of Commerce">
-    <meta name="author" content="Jabulani Kalomo">
-    <title>Bulawayo Chamber of Commerce - Directory</title>
+    <!-- Improved meta description -->
+    <meta name="description"
+        content="Explore our comprehensive business directory of Bulawayo Chamber of Commerce members. Find local businesses, services, and contact information.">
+    <!-- Enhanced author meta -->
+    <meta name="author" content="Jabulani Kalomo - WDD 231 Student Project">
+    <!-- Improved title -->
+    <title>Bulawayo Business Directory | Chamber of Commerce</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Correct implementation -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <!-- Favicon -->
+    <!-- Favicon - Optimized -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Bulawayo Chamber Directory">
+    <!-- Open Graph Meta Tags - Updated -->
+    <meta property="og:title" content="Bulawayo Business Directory | Chamber of Commerce">
     <meta property="og:description"
-        content="Discover local businesses in Bulawayo through our Chamber of Commerce directory.">
-    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/logo.svg">
+        content="Explore our comprehensive directory of Bulawayo Chamber of Commerce members and local businesses.">
+    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/bulawayo.png">
     <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
 
@@ -41,23 +45,23 @@
 
 <body>
     <header>
-        <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" class="logo">
+        <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" class="logo" width="100" height="100">
         <span class="site-name">Bulawayo Chamber of Commerce</span>
-        <button id="menu" aria-label="Toggle Navigation">☰</button>
+        <button id="menu" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
     </header>
     <nav id="nav">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html" aria-current="page">Directory</a></li>
             <li><a href="join.html">Join</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <h1>Business Directory</h1>
+        <h1>Bulawayo Business Directory</h1>
         <div class="view-options">
-            <button class="active" id="gridView">Grid</button>
-            <button id="listView">List</button>
+            <button class="active" id="gridView" aria-label="Grid view">Grid</button>
+            <button id="listView" aria-label="List view">List</button>
         </div>
         <div id="memberContainer" class="grid-view"></div>
     </main>
@@ -66,8 +70,12 @@
             <a href="https://github.com/jkalomo" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/jkalomo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-        <p>Bulawayo Chamber of Commerce | 123 Jason Moyo St, Bulawayo, Zimbabwe | info@bulawayochamber.org | +263 9 123
-            456</p>
+        <address>
+            Bulawayo Chamber of Commerce<br>
+            123 Jason Moyo St, Bulawayo, Zimbabwe<br>
+            <a href="mailto:info@bulawayochamber.org">info@bulawayochamber.org</a><br>
+            <a href="tel:+2639123456">+263 9 123 456</a>
+        </address>
         <p>© <span id="year"></span> Bulawayo Chamber of Commerce | Jabulani Kalomo | WDD 231 | Zimbabwe</p>
         <p id="lastModified"></p>
     </footer>
