@@ -72,14 +72,19 @@
             <address>
                 Bulawayo Chamber of Commerce<br>
                 123 Jason Moyo St, Bulawayo, Zimbabwe<br>
-                Email: <a href="mailto:contact@bulawayocc.org" aria-label="Email Bulawayo Chamber of Commerce">Contact
-                    Us</a><br>
+                Email: <a href="#" id="email-link" aria-label="Email contact at bulawayocc dot org">Contact Us</a><br>
                 Phone: <a href="tel:+2639123456">+263 9 123 456</a>
             </address>
         </div>
         <p>© <span id="year"></span> Bulawayo Chamber of Commerce | Jabulani Kalomo | WDD 231 | Zimbabwe</p>
         <p id="lastModified"></p>
     </footer>
+    <script>
+        document.getElementById('email-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'mailto:contact@bulawayocc.org';
+        });
+    </script>
 </body>
 
 </html>
