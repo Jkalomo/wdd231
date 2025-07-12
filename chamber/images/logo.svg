@@ -1,0 +1,9 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Matobo Hills -->
+        <path d="M20 70 C40 60, 60 60, 80 70" fill="none" stroke="#004080" stroke-width="2"/>
+        <!-- Zimbabwe bird -->
+        <path d="M45 60 L50 65 L55 60 L50 55 Z" fill="#ffd700"/>
+        <!-- BCC text -->
+        <text x="50" y="50" font-family="Lato, sans-serif" font-size="24" font-weight="bold" fill="#002855" text-anchor="middle">BCC</text>
+        <text x="50" y="90" font-family="Lato, sans-serif" font-size="10" fill="#002855" text-anchor="middle">Bulawayo Chamber</text>
+    </svg>

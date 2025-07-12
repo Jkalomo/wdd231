@@ -1,0 +1,206 @@
+/* Mobile-First Styles */
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.site-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#menu {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--white);
+}
+
+/* Navigation */
+nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--secondary);
+    padding: 1rem;
+}
+
+nav.show {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: color-mix(in srgb, var(--secondary) 90%, black);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 1rem;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    margin: 0.5rem 0 1rem;
+}
+
+/* Directory Page Specific */
+.view-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.view-options button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.view-options button.active {
+    background-color: var(--primary);
+}
+
+/* Member Cards */
+.member-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.member-card img {
+    max-width: 100px;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+}
+
+.member-content {
+    padding: 1rem;
+}
+
+.member-content h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-content p {
+    margin-bottom: 0.5rem;
+}
+
+.member-content a {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.member-content a:hover {
+    color: color-mix(in srgb, var(--secondary) 90%, black);
+}
+
+.member-level {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.member-level[data-membership="1"] {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.member-level[data-membership="2"] {
+    background-color: #c0c0c0;
+    color: var(--dark);
+}
+
+.member-level[data-membership="3"] {
+    background-color: var(--accent);
+    color: var(--dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #66ccff;
+}
+
+/* Grid/List View Classes */
+.grid-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.list-view .member-card {
+    display: flex;
+    align-items: center;
+}
+
+.list-view .member-card img {
+    max-width: 100px;
+    height: auto;
+    margin: 1rem;
+    border-right: 1px solid #ddd;
+}
+
+@media (min-width: 500px) {
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

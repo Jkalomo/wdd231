@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business directory for the Bulawayo Chamber of Commerce">
+    <meta name="author" content="Jabulani Kalomo">
+    <title>Bulawayo Chamber of Commerce - Directory</title>
+    <!-- Favicon |Modern approach with multiple icon formats-->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bulawayo Chamber Directory">
+    <meta property="og:description"
+        content="Discover local businesses in Bulawayo through our Chamber of Commerce directory.">
+    <meta property="og:image" content="https://[your-github-username].github.io/wdd231/chamber/images/logo.svg">
+    <meta property="og:url" content="https://[your-github-username].github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <!-- JavaScript -->
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/responsive.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" class="logo">    
+        <span class="site-name">Bulawayo Chamber of Commerce</span>
+        <button id="menu" aria-label="Toggle Navigation">☰</button>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Business Directory</h1>
+        <div class="view-options">
+            <button class="active" id="gridView">Grid</button>
+            <button id="listView">List</button>
+        </div>
+        <section id="memberContainer" class="grid-view"></section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/[your-github-username]" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/[your-linkedin-username]" target="_blank">LinkedIn</a>
+        </div>
+        <p>Bulawayo Chamber of Commerce | 123 Jason Moyo St, Bulawayo, Zimbabwe | info@bulawayochamber.org | +263 9 123
+            456</p>
+        <p>© <span id="year"></span> Bulawayo Chamber of Commerce | Jabulani Kalomo | WDD 231 | Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

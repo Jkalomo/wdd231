@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Bulawayo Tech Solutions",
+        "address": "123 Jason Moyo St, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 456",
+        "website": "https://bulawayotechsolutions.co.zw",
+        "image": "images/btech.png",
+        "membership": 3,
+        "industry": "Technology Services"
+    },
+    {
+        "name": "Zimbabwe Textiles Ltd",
+        "address": "456 Leopold Takawira Ave, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 457",
+        "website": "https://zimbabwetextiles.co.zw",
+        "image": "images/textile.png",
+        "membership": 2,
+        "industry": "Textile Manufacturing"
+    },
+    {
+        "name": "Matopos Eco Tours",
+        "address": "789 12th Ave, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 458",
+        "website": "https://matoposecotours.co.zw",
+        "image": "images/matopos.png",
+        "membership": 1,
+        "industry": "Tourism"
+    },
+    {
+        "name": "Bulawayo Bakery",
+        "address": "101 George Silundika St, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 459",
+        "website": "https://bulawayobakery.co.zw",
+        "image": "images/bakery.png",
+        "membership": 3,
+        "industry": "Food Services"
+    },
+    {
+        "name": "Zambezi Construction",
+        "address": "202 Fife St, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 460",
+        "website": "https://zambeziconstruction.co.zw",
+        "image": "images/zambezi.png",
+        "membership": 2,
+        "industry": "Construction"
+    },
+    {
+        "name": "Savanna Retail",
+        "address": "303 9th Ave, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 461",
+        "website": "https://savannaretail.co.zw",
+        "image": "images/savanna.png",
+        "membership": 1,
+        "industry": "Retail"
+    },
+    {
+        "name": "Ndebele Arts & Crafts",
+        "address": "404 Robert Mugabe Way, Bulawayo, Zimbabwe",
+        "phone": "+263 9 123 462",
+        "website": "https://ndebelearts.co.zw",
+        "image": "images/ndebele.png",
+        "membership": 3,
+        "industry": "Arts and Culture"
+    }
+]

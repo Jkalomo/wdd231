@@ -1,0 +1,70 @@
+/* Large Screen Styles */
+@media (min-width: 768px) {
+
+    /* Header */
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    /* Main Content */
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* Directory Page */
+    .view-options button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .list-view .member-card img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .member-card {
+        transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-view {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
