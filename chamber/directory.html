@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Explore our comprehensive business directory of Bulawayo Chamber of Commerce members">
-    <meta name="author" content="Jabulani Kalomo - WDD 231 Student Project">
-    <title>Bulawayo Business Directory | Chamber of Commerce</title>
+        content="Explore our comprehensive directory of local businesses in Bulawayo through the Chamber of Commerce. Find contact information, services, and member details.">
+    <meta name="author" content="Jabulani Kalomo">
+    <title>Bulawayo Chamber of Commerce - Business Directory</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bulawayo Chamber of Commerce - Business Directory">
+    <meta property="og:description"
+        content="Discover local Bulawayo businesses through our comprehensive Chamber of Commerce directory">
+    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/bulawayo.png">
+    <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +55,7 @@
         </ul>
     </nav>
     <main>
-        <h1>Bulawayo Business Directory</h1>
+        <h1>Business Directory</h1>
         <div class="view-options">
             <button class="active" id="gridView" aria-label="Grid view">Grid</button>
             <button id="listView" aria-label="List view">List</button>
@@ -59,14 +67,16 @@
             <a href="https://github.com/jkalomo" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/jkalomo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-        <address class="contact-info">
+        <div class="contact-info">
             <h2 class="visually-hidden">Contact Information</h2>
-            <p>Bulawayo Chamber of Commerce</p>
-            <p>123 Jason Moyo St, Bulawayo, Zimbabwe</p>
-            <p>Email: <a href="mailto:info@bulawayochamber.org"
-                    aria-label="Email us at info at bulawayochamber dot org">info@bulawayochamber.org</a></p>
-            <p>Phone: <a href="tel:+2639123456" aria-label="Call us at +263 9 123 456">+263 9 123 456</a></p>
-        </address>
+            <address>
+                Bulawayo Chamber of Commerce<br>
+                123 Jason Moyo St, Bulawayo, Zimbabwe<br>
+                Email: <a href="mailto:contact@bulawayocc.org"
+                    aria-label="Email contact at bulawayocc dot org">contact@bulawayocc.org</a><br>
+                Phone: <a href="tel:+2639123456">+263 9 123 456</a>
+            </address>
+        </div>
         <p>© <span id="year"></span> Bulawayo Chamber of Commerce | Jabulani Kalomo | WDD 231 | Zimbabwe</p>
         <p id="lastModified"></p>
     </footer>
