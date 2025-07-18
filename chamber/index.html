@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Welcome to the Bulawayo Chamber of Commerce, supporting local business growth and community development.">
-       <meta name="author" content="Jabulani Kalomo">
-    <title>Home | Bulawayo Chamber of Commerce</title>
+        content="Bulawayo Chamber of Commerce - Connecting businesses, fostering growth, and driving economic development in Zimbabwe's second-largest city.">
+    <meta name="author" content="Jabulani Kalomo - WDD 230 Student Project">
+    <title>Bulawayo Chamber of Commerce | Home</title>
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Bulawayo Chamber of Commerce">
-    <meta property="og:description" content="Supporting Local Business Growth">
-    <meta property="og:image" content="/images/social-home.jpg">
-    <meta property="og:url" content="/">
+    <meta property="og:title" content="Bulawayo Chamber of Commerce | Home">
+    <meta property="og:description"
+        content="Connecting businesses and fostering economic growth in Bulawayo, Zimbabwe.">
+    <meta property="og:image" content="images/social-home.jpg">
+    <meta property="og:url" content="https://jkalomo.github.io/wdd230/chamber/index.html">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -21,35 +22,17 @@
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="styles/base.css" as="style">
-    <link rel="preload" href="scripts/weather.js" as="script">
-
-    
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
-
-    <!-- No-JS Fallback -->
     <noscript>
         <link rel="stylesheet" href="styles/noscript.css">
-        <style>
-            .js-dependent {
-                display: none !important;
-            }
-
-            .no-js-message {
-                display: block;
-                padding: 1rem;
-                background: #f8d7da;
-            }
-        </style>
     </noscript>
 </head>
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
@@ -65,7 +48,6 @@
             </button>
         </div>
     </header>
-
     <nav id="nav" class="main-navigation">
         <ul class="nav-list">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
@@ -74,13 +56,12 @@
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
-
     <main id="main-content">
+        <h1>Welcome to Bulawayo Chamber of Commerce</h1>
         <!-- Hero Section -->
         <section class="hero">
             <img src="images/hero-image.jpg" alt="Bulawayo cityscape">
             <div class="hero-content">
-                <h1>Home | Bulawayo Chamber of Commerce</h1>
                 <p>Discover our vibrant business community</p>
                 <div class="hero-actions">
                     <a href="directory.html" class="btn btn-primary">Explore Businesses</a>
@@ -88,7 +69,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Upcoming Events -->
         <section class="events">
             <h2>Upcoming Events</h2>
@@ -105,7 +85,6 @@
                 <p>Location: Bulawayo City Hall</p>
             </div>
         </section>
-
         <!-- Weather Information -->
         <section class="weather">
             <h2>Weather Information</h2>
@@ -121,7 +100,6 @@
                 <div id="forecast-container"></div>
             </div>
         </section>
-
         <!-- Why Join -->
         <section class="why-join">
             <h2>Why Join Our Chamber?</h2>
@@ -141,14 +119,12 @@
             </ul>
             <a href="join.html" class="btn btn-primary">Become a Member</a>
         </section>
-
         <!-- Member Spotlights -->
         <section class="spotlights">
             <h2>Member Spotlights</h2>
             <div id="spotlight-container"></div>
         </section>
     </main>
-
     <footer class="site-footer">
         <div class="footer-content">
             <section class="footer-section">
@@ -163,9 +139,9 @@
             <section class="footer-section">
                 <h3 class="footer-heading">Contact Us</h3>
                 <address class="footer-address">
-                <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
-                <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
-                <p>Email: <a href="/contact">Email Us</a></p>
+                    <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
+                    <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
+                    <p>Email: <a href="/contact.html" aria-label="Go to contact page">Email Us</a></p>
                 </address>
             </section>
             <section class="footer-section">
@@ -200,7 +176,6 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
-
     <!-- JavaScript -->
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
