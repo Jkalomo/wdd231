@@ -1,21 +1,16 @@
 /* ===== LARGE SCREEN STYLES ===== */
 @media (min-width: 768px) {
+
+    /* Global Adjustments */
     :root {
         --large-text-size: clamp(1.1rem, 2vw, 1.25rem);
         --heading-text-size: clamp(1.5rem, 3vw, 2.5rem);
         --icon-size: 120px;
+        /* Standardized icon size */
     }
 
     body {
         font-size: var(--large-text-size);
-    }
-
-    h1 {
-        font-size: var(--heading-text-size);
-    }
-
-    h2 {
-        font-size: clamp(1.5rem, 2.5vw, 1.75rem);
     }
 
     /* Header & Navigation */
@@ -89,32 +84,14 @@
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 1.5rem;
     }
 
-    .hero {
-        grid-column: 1 / -1;
-        margin-bottom: 1.5rem;
+    h1 {
+        font-size: var(--heading-text-size);
     }
 
-    .events {
-        grid-column: 1;
-        grid-row: 2;
-        padding: 1.5rem;
-    }
-
-    .weather {
-        grid-column: 2;
-        grid-row: 2;
-        padding: 1.5rem;
-    }
-
-    .spotlights {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        padding: 1.5rem;
+    h2 {
+        font-size: clamp(1.5rem, 2.5vw, 1.75rem);
     }
 
     /* Hero Section */
@@ -139,6 +116,33 @@
 
     .hero-actions .btn {
         margin: 0.5rem;
+    }
+
+    /* Layout */
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        grid-column: 1 / -1;
+        margin-bottom: 1.5rem;
+    }
+
+    .events {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .weather {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .spotlights {
+        grid-column: 1 / -1;
+        grid-row: 3;
     }
 
     /* Directory Page */
@@ -174,18 +178,26 @@
 
     .grid-view {
         grid-template-columns: repeat(4, 1fr);
+        /* Enforce at least 4 columns */
         min-width: 0;
     }
 
     .list-view {
         grid-template-columns: 1fr;
+        /* Single column for list view */
     }
 
     .member-card {
         display: flex;
         flex-direction: column;
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         padding: 1rem;
         align-items: center;
+        /* Center content in list view */
     }
 
     .member-card:hover,
@@ -196,10 +208,15 @@
 
     .member-card img {
         width: var(--icon-size);
+        /* Fixed width */
         height: var(--icon-size);
+        /* Fixed height */
         max-width: var(--icon-size);
+        /* Prevent scaling beyond this */
         max-height: var(--icon-size);
+        /* Prevent scaling beyond this */
         object-fit: contain;
+        /* Preserve aspect ratio without distortion */
         border-radius: 4px;
         margin-bottom: 1rem;
     }
@@ -207,6 +224,7 @@
     .member-content {
         padding: 0;
         text-align: center;
+        /* Center text in list view */
     }
 
     .member-content h3 {
@@ -258,6 +276,12 @@
     }
 
     /* Content Sections */
+    .events,
+    .weather,
+    .spotlights {
+        padding: 1.5rem;
+    }
+
     .event-card {
         padding: 1rem;
         margin-bottom: 1rem;
@@ -337,6 +361,7 @@
 
     .directory-container.grid-view {
         grid-template-columns: repeat(4, 1fr);
+        /* Ensure 4 columns at larger screens */
     }
 
     #spotlight-container {
@@ -365,5 +390,6 @@
 
     .directory-container.grid-view {
         grid-template-columns: repeat(4, 1fr);
+        /* Maintain 4 columns */
     }
 }
