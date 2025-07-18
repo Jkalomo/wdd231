@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Bulawayo Chamber of Commerce">
+    <meta name="author" content="Jabulani Kalomo">
+    <title>Contact | Bulawayo Chamber of Commerce</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" class="logo" width="100" height="100">
+        <span class="site-name">Bulawayo Chamber of Commerce</span>
+        <button id="menu" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Contact Us</h1>
+        <p>Get in touch with the Bulawayo Chamber of Commerce.</p>
+        <!-- Contact form will be added here in future lessons -->
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/jkalomo" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/jkalomo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="contact-info">
+            <h2 class="visually-hidden">Contact Information</h2>
+            <address>
+                Bulawayo Chamber of Commerce<br>
+                123 Jason Moyo St, Bulawayo, Zimbabwe<br>
+                Email: <a href="#" id="email-link" aria-label="Email contact at bulawayocc dot org">Contact Us</a><br>
+                Phone: <a href="tel:+2639123456">+263 9 123 456</a>
+            </address>
+        </div>
+        <p>© <span id="year"></span> Bulawayo Chamber of Commerce | Jabulani Kalomo | WDD 231 | Zimbabwe</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/responsive.js" defer></script>
+    <script src="scripts/emailhandler.js" defer></script>
+</body>
+
+</html>

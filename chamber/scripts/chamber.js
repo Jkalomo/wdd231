@@ -16,13 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
         gridViewBtn: document.getElementById('gridView'),
         listViewBtn: document.getElementById('listView'),
         memberContainer: document.getElementById('memberContainer'),
+        memberFilter: document.getElementById('memberFilter'),
         viewOptions: document.querySelector('.view-options')
     };
 
     // State Management
     const state = {
         members: [],
-        currentView: localStorage.getItem('directoryView') || CONFIG.defaultView
+        currentView: localStorage.getItem('directoryView') || CONFIG.defaultView,
+        currentFilter: 'all'
     };
 
     // Initialize Application
@@ -50,8 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderMembers() {
         if (!state.members.length) return;
 
-        elements.memberContainer.innerHTML = state.members.map(member => `
-            <article class="member-card" data-membership="${member.membership}">
+        elements.memberContainer.innerHTML = ''; // Clear loading message
+
+        const filteredMembers = state.currentFilter === 'all'
+            ? state.members
+            : state.members.filter(member => {
+                const membershipMap = { gold: 3, silver: 2, basic: 1 };
+                return membershipMap[state.currentFilter] === member.membership;
+            });
+
+        if (filteredMembers.length === 0) {
+            elements.memberContainer.innerHTML = '<p>No members found for this category.</p>';
+            return;
+        }
+
+        filteredMembers.forEach(member => {
+            const card = document.createElement('article');
+            card.className = 'member-card';
+            card.setAttribute('data-membership', member.membership);
+            card.innerHTML = `
                 ${renderMemberImage(member)}
                 <div class="member-content">
                     <h3>${member.name}</h3>
@@ -63,8 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><a href="${ensureUrlProtocol(member.website)}" target="_blank" rel="noopener noreferrer">Visit Website</a></p>
                     ${member.industry ? `<p class="industry">${member.industry}</p>` : ''}
                 </div>
-            </article>
-        `).join('');
+            `;
+            elements.memberContainer.appendChild(card);
+        });
     }
 
     // Image Handling
@@ -92,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!elements.memberContainer) return;
 
         state.currentView = viewType;
-        elements.memberContainer.className = `${viewType}-view`;
+        elements.memberContainer.className = `directory-container ${viewType}-view js-dependent`;
 
         if (elements.gridViewBtn && elements.listViewBtn) {
             elements.gridViewBtn.classList.toggle('active', viewType === 'grid');
@@ -102,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (savePreference) {
             localStorage.setItem('directoryView', viewType);
         }
+        renderMembers(); // Re-render after view change
     }
 
     // Utility Functions
@@ -132,6 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (elements.listViewBtn) {
             elements.listViewBtn.addEventListener('click', () => toggleView('list'));
+        }
+
+        if (elements.memberFilter) {
+            elements.memberFilter.addEventListener('change', (e) => {
+                state.currentFilter = e.target.value;
+                renderMembers();
+            });
         }
     }
 
