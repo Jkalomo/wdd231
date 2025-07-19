@@ -11,7 +11,7 @@ nav.enabled {
 }
 
 .js-dependent {
-    display: none;
+    display: none !important;
 }
 
 .no-js-message {
@@ -38,7 +38,8 @@ nav.enabled {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
-css .js-dependent {
+/* Added from embedded styles */
+.js-dependent {
     display: none !important;
 }
 
