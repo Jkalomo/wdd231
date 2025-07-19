@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Explore our comprehensive business directory of Bulawayo Chamber of Commerce members">
-       <meta name="author" content="Jabulani Kalomo">
+    <meta name="author" content="Jabulani Kalomo">
     <title>Directory | Bulawayo Chamber of Commerce</title>
     <meta property="og:title" content="Business Directory | Bulawayo Chamber of Commerce">
     <meta property="og:description" content="Discover our valued members">
     <meta property="og:image" content="/images/social-home.jpg">
     <meta property="og:url" content="/directory.html">
     <meta property="og:type" content="website">
-
-<!-- CSS -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preload" href="styles/base.css" as="style">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
@@ -36,7 +38,6 @@
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
@@ -52,22 +53,19 @@
             </button>
         </div>
     </header>
-
     <nav id="nav" class="main-navigation">
         <ul class="nav-list">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="directory.html" class="nav-link">Directory</a></li>
+            <li class="nav-item"><a href="directory.html" class="nav-link" aria-current="page">Directory</a></li>
             <li class="nav-item"><a href="join.html" class="nav-link">Join</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
-
     <main id="main-content" class="directory-main">
         <header class="page-header">
             <h2 class="page-title">Business Directory</h2>
             <p class="page-subtitle">Discover our valued members</p>
         </header>
-
         <div class="directory-controls">
             <div class="view-toggle" role="group" aria-label="View options">
                 <button id="gridView" class="view-button active" data-view="grid" aria-pressed="true">
@@ -98,19 +96,16 @@
                 </select>
             </div>
         </div>
-
         <div id="memberContainer" class="directory-container grid-view js-dependent" aria-live="polite">
             <div class="loading-message">
                 <div class="loading-spinner" aria-hidden="true"></div>
                 <p>Loading directory...</p>
             </div>
         </div>
-
         <div class="no-js-message" hidden>
             <p>Please enable JavaScript to view our business directory.</p>
         </div>
     </main>
-
     <footer class="site-footer">
         <div class="footer-content">
             <section class="footer-section">
@@ -127,7 +122,7 @@
                 <address class="footer-address">
                     <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
                     <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
-                    <p>Email: <a href="/contact">Email Us</a></p>
+                    <p>Email: <a href="mailto:contact@bulawayocc.org" id="email-link">Email Us</a></p>
                 </address>
             </section>
             <section class="footer-section">
@@ -162,7 +157,6 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
-
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
     <script src="scripts/chamber.js" defer></script>

@@ -8,23 +8,20 @@
         content="Welcome to the Bulawayo Chamber of Commerce, supporting local business growth and community development.">
     <meta name="author" content="Jabulani Kalomo">
     <title>Home | Bulawayo Chamber of Commerce</title>
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Bulawayo Chamber of Commerce">
     <meta property="og:description" content="Supporting Local Business Growth">
     <meta property="og:image" content="/images/social-home.jpg">
     <meta property="og:url" content="/">
     <meta property="og:type" content="website">
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <!-- Preload Critical Resources -->
     <link rel="preload" href="styles/base.css" as="style">
     <link rel="preload" href="scripts/weather.js" as="script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
-    <!-- No-JS Fallback -->
     <noscript>
         <link rel="stylesheet" href="styles/noscript.css">
         <style>
@@ -60,79 +57,76 @@
     </header>
     <nav id="nav" class="main-navigation">
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="directory.html" class="nav-link">Directory</a></li>
             <li class="nav-item"><a href="join.html" class="nav-link">Join</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
     <main id="main-content">
-        <h1>Home | Bulawayo Chamber of Commerce</h1>
-        <!-- Hero Section -->
         <section class="hero">
-            <img src="images/hero-image.jpg" alt="Bulawayo cityscape">
+            <img src="images/hero-image.jpg" alt="Bulawayo cityscape" loading="lazy">
             <div class="hero-content">
-                <p>Discover our vibrant business community</p>
+                <h2>Discover Our Vibrant Business Community</h2>
                 <div class="hero-actions">
-                    <a href="directory.html" class="btn btn-primary">Explore Businesses</a>
-                    <a href="join.html" class="btn btn-secondary">Learn About Membership</a>
+                    <a href="directory.html" class="btn btn-success cta">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                        </svg>
+                        Explore Businesses
+                    </a>
+                    <a href="join.html" class="btn btn-secondary cta">Learn About Membership</a>
                 </div>
             </div>
         </section>
-        <!-- Upcoming Events -->
         <section class="events">
-            <h2>Upcoming Events</h2>
-            <div class="event-card">
+            <h2 class="section-title">Upcoming Events</h2>
+            <article class="event-card">
                 <h3>Business Networking Mixer</h3>
-                <p>Date: August 15, 2025</p>
-                <p>Time: 5:30 PM - 7:30 PM</p>
+                <p><time datetime="2025-08-15T17:30">August 15, 2025, 5:30 PM - 7:30 PM</time></p>
                 <p>Location: Chamber Office</p>
-            </div>
-            <div class="event-card">
+            </article>
+            <article class="event-card">
                 <h3>Economic Forum</h3>
-                <p>Date: September 22, 2025</p>
-                <p>Time: 9:00 AM - 12:00 PM</p>
+                <p><time datetime="2025-09-22T09:00">September 22, 2025, 9:00 AM - 12:00 PM</time></p>
                 <p>Location: Bulawayo City Hall</p>
-            </div>
+            </article>
         </section>
-        <!-- Weather Information -->
         <section class="weather">
-            <h2>Weather Information</h2>
-            <div class="current-weather">
-                <h3>Current Conditions</h3>
-                <p id="current-temp"></p>
-                <p id="weather-desc"></p>
-                <p>Humidity: <span id="humidity"></span>%</p>
-                <div id="weather-icon"></div>
-            </div>
-            <div class="forecast">
-                <h3>3-Day Forecast</h3>
-                <div id="forecast-container"></div>
+            <h2 class="section-title">Weather Information</h2>
+            <article class="current-weather js-dependent loading-message">
+                <div class="loading-spinner" aria-hidden="true"></div>
+                <p>Loading weather...</p>
+            </article>
+            <div class="forecast js-dependent" id="forecast-container">
+                <div class="loading-message">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p>Loading forecast...</p>
+                </div>
             </div>
         </section>
-        <!-- Why Join -->
         <section class="why-join">
-            <h2>Why Join Our Chamber?</h2>
+            <h2 class="section-title">Why Join Our Chamber?</h2>
             <ul>
-                <li>
-                    <strong>Networking</strong>
-                    <p>Connect with other local business owners and professionals</p>
-                </li>
-                <li>
-                    <strong>Visibility</strong>
-                    <p>Get featured in our directory and marketing materials</p>
-                </li>
-                <li>
-                    <strong>Advocacy</strong>
-                    <p>Have your voice heard in local business decisions</p>
-                </li>
+                <li><strong>Networking:</strong> Connect with other local business owners and professionals</li>
+                <li><strong>Visibility:</strong> Get featured in our directory and marketing materials</li>
+                <li><strong>Advocacy:</strong> Have your voice heard in local business decisions</li>
             </ul>
-            <a href="join.html" class="btn btn-primary">Become a Member</a>
+            <a href="join.html" class="btn btn-success cta">
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                </svg>
+                Become a Member
+            </a>
         </section>
-        <!-- Member Spotlights -->
         <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div id="spotlight-container"></div>
+            <h2 class="section-title">Member Spotlights</h2>
+            <div id="spotlight-container" class="js-dependent loading-message" aria-live="polite">
+                <div class="loading-spinner" aria-hidden="true"></div>
+                <p>Loading spotlights...</p>
+            </div>
         </section>
     </main>
     <footer class="site-footer">
@@ -151,7 +145,7 @@
                 <address class="footer-address">
                     <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
                     <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
-                    <p>Email: <a href="/contact.html" aria-label="Go to contact page">Email Us</a></p>
+                    <p>Email: <a href="mailto:contact@bulawayocc.org" id="email-link">Email Us</a></p>
                 </address>
             </section>
             <section class="footer-section">
@@ -186,9 +180,10 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
-    <!-- JavaScript -->
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/emailhandler.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlight.js" defer></script>
     <script src="scripts/engagement.js" defer></script>

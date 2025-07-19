@@ -1,33 +1,25 @@
+// chamber.js - Handle member directory functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuration Constants
     const CONFIG = {
         allowedImageExtensions: ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif'],
         placeholderImage: 'images/placeholder.webp',
         defaultView: 'grid',
-        membershipLevels: {
-            1: 'Basic',
-            2: 'Silver',
-            3: 'Gold'
-        }
+        membershipLevels: { 1: 'basic', 2: 'silver', 3: 'gold' }
     };
 
-    // DOM Elements
     const elements = {
         gridViewBtn: document.getElementById('gridView'),
         listViewBtn: document.getElementById('listView'),
         memberContainer: document.getElementById('memberContainer'),
-        memberFilter: document.getElementById('memberFilter'),
-        viewOptions: document.querySelector('.view-options')
+        memberFilter: document.getElementById('memberFilter')
     };
 
-    // State Management
     const state = {
         members: [],
         currentView: localStorage.getItem('directoryView') || CONFIG.defaultView,
         currentFilter: 'all'
     };
 
-    // Initialize Application
     async function init() {
         setupEventListeners();
         await loadMembers();
@@ -35,9 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setInitialView();
     }
 
-    // Data Loading
     async function loadMembers() {
         try {
+            elements.memberContainer.innerHTML = `
+                <div class="loading-message">
+                    <div class="loading-spinner"></div>
+                    <p>Loading directory...</p>
+                </div>`;
             const response = await fetch('data/members.json');
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             state.members = await response.json();
@@ -48,38 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // View Rendering
     function renderMembers() {
-        if (!state.members.length) return;
-
-        elements.memberContainer.innerHTML = ''; // Clear loading message
+        if (!elements.memberContainer) return;
+        elements.memberContainer.innerHTML = '';
 
         const filteredMembers = state.currentFilter === 'all'
             ? state.members
-            : state.members.filter(member => {
-                const membershipMap = { gold: 3, silver: 2, basic: 1 };
-                return membershipMap[state.currentFilter] === member.membership;
-            });
+            : state.members.filter(member => CONFIG.membershipLevels[member.membership] === state.currentFilter);
 
         if (filteredMembers.length === 0) {
-            elements.memberContainer.innerHTML = '<p>No members found for this category.</p>';
+            elements.memberContainer.innerHTML = '<p class="error-message">No members found for this category.</p>';
             return;
         }
 
         filteredMembers.forEach(member => {
             const card = document.createElement('article');
-            card.className = 'member-card';
+            card.className = `member-card member-level--${CONFIG.membershipLevels[member.membership]}`;
             card.setAttribute('data-membership', member.membership);
+            card.setAttribute('aria-label', `${member.name}, ${CONFIG.membershipLevels[member.membership]} Member`);
             card.innerHTML = `
                 ${renderMemberImage(member)}
                 <div class="member-content">
                     <h3>${member.name}</h3>
-                    <p class="member-level">
-                        ${CONFIG.membershipLevels[member.membership] || 'Basic'} Member
-                    </p>
+                    <p class="member-level">${CONFIG.membershipLevels[member.membership] || 'Basic'} Member</p>
                     <address>${member.address}</address>
-                    <p><a href="tel:${formatPhoneNumber(member.phone)}">${member.phone}</a></p>
-                    <p><a href="${ensureUrlProtocol(member.website)}" target="_blank" rel="noopener noreferrer">Visit Website</a></p>
+                    <p><a href="tel:${formatPhoneNumber(member.phone)}" aria-label="Call ${member.name}">${member.phone}</a></p>
+                    <p><a href="${ensureUrlProtocol(member.website)}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${member.name} website">Visit Website</a></p>
                     ${member.industry ? `<p class="industry">${member.industry}</p>` : ''}
                 </div>
             `;
@@ -87,14 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Image Handling
     function renderMemberImage(member) {
         if (!member.image) return `<div class="no-image">No Logo Available</div>`;
 
-        const isImage = CONFIG.allowedImageExtensions.some(ext =>
-            member.image.toLowerCase().endsWith(ext)
-        );
-
+        const isImage = CONFIG.allowedImageExtensions.some(ext => member.image.toLowerCase().endsWith(ext));
         return isImage ? `
             <img src="${member.image}" 
                  alt="${member.name} logo" 
@@ -103,29 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ` : `<div class="no-image">Invalid Image Format</div>`;
     }
 
-    // View Management
     function setInitialView() {
         toggleView(state.currentView, false);
+        autofix
     }
 
     function toggleView(viewType, savePreference = true) {
         if (!elements.memberContainer) return;
-
         state.currentView = viewType;
         elements.memberContainer.className = `directory-container ${viewType}-view js-dependent`;
-
         if (elements.gridViewBtn && elements.listViewBtn) {
             elements.gridViewBtn.classList.toggle('active', viewType === 'grid');
+            elements.gridViewBtn.setAttribute('aria-pressed', viewType === 'grid');
             elements.listViewBtn.classList.toggle('active', viewType === 'list');
+            elements.listViewBtn.setAttribute('aria-pressed', viewType === 'list');
         }
-
-        if (savePreference) {
-            localStorage.setItem('directoryView', viewType);
-        }
-        renderMembers(); // Re-render after view change
+        if (savePreference) localStorage.setItem('directoryView', viewType);
+        renderMembers();
     }
 
-    // Utility Functions
     function formatPhoneNumber(phone) {
         return phone.replace(/\D/g, '');
     }
@@ -139,22 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.memberContainer.innerHTML = `
                 <div class="error-message">
                     <p>We couldn't load the member directory.</p>
-                    <button onclick="window.location.reload()">Try Again</button>
+                    <button type="button" aria-label="Retry loading directory">Try Again</button>
                 </div>
             `;
+            elements.memberContainer.querySelector('button')?.addEventListener('click', () => window.location.reload());
         }
     }
 
-    // Event Listeners
     function setupEventListeners() {
         if (elements.gridViewBtn) {
             elements.gridViewBtn.addEventListener('click', () => toggleView('grid'));
         }
-
         if (elements.listViewBtn) {
             elements.listViewBtn.addEventListener('click', () => toggleView('list'));
         }
-
         if (elements.memberFilter) {
             elements.memberFilter.addEventListener('change', (e) => {
                 state.currentFilter = e.target.value;
@@ -163,6 +143,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Start the application
     init();
 });
