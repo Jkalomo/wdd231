@@ -1,7 +1,26 @@
-/* small.css - Mobile-first styles */
+/* small.css - Mobile-first styles for Bulawayo Chamber of Commerce */
 :root {
     --icon-size: 80px;
     --spacing-unit: 1rem;
+    --primary: #005670;
+    /* Professional blue */
+    --secondary: #D94F04;
+    /* Zimbabwean orange */
+    --accent: #F2C94C;
+    /* Gold for prestige */
+    --highlight: #FFFFFF;
+    --light: #F7FAFC;
+    --gray: #4B5563;
+    --dark: #1F2937;
+    --success: #22C55E;
+    --border-radius: 4px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --glow-shadow: 0 4px 8px rgba(0, 86, 112, 0.2);
+    --focus-outline: 2px solid var(--accent);
+    --transition: all 0.3s ease;
+    --font-size-h2: 1.75rem;
+    --font-size-h3: 1.25rem;
+    --font-size-body: 1rem;
 }
 
 header {
@@ -26,7 +45,7 @@ header {
     font-family: 'Inter', sans-serif;
     font-size: clamp(1.5rem, 5vw, 1.75rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--highlight);
     margin-left: 0.5rem;
 }
 
@@ -39,7 +58,7 @@ header {
     font-size: 1.25rem;
     background: none;
     border: none;
-    color: #ffffff;
+    color: var(--highlight);
     cursor: pointer;
     padding: 0.5rem;
 }
@@ -74,7 +93,7 @@ nav ul {
 
 nav a {
     display: block;
-    color: #ffffff;
+    color: var(--highlight);
     padding: 1rem var(--spacing-unit);
     border-radius: var(--border-radius);
     font-weight: 600;
@@ -84,14 +103,13 @@ nav a {
 nav a:hover,
 nav a:focus {
     background: var(--primary);
-    color: #ffffff;
+    color: var(--highlight);
     outline: var(--focus-outline);
 }
 
 nav a[aria-current="page"] {
     background: var(--accent);
-    color: #ffffff;
-    /* Contrast: 4.6:1 on #d97706 */
+    color: var(--dark);
 }
 
 .breadcrumbs {
@@ -123,17 +141,25 @@ main {
 .hero {
     position: relative;
     margin-bottom: calc(var(--spacing-unit) * 1.5);
-    background: var(--light);
+    height: 300px;
     border-radius: var(--border-radius);
-    border: 1px solid var(--primary);
-    min-height: 300px;
 }
 
 .hero img {
     width: 100%;
-    height: auto;
-    max-height: 250px;
+    height: 100%;
     object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 86, 112, 0.4), rgba(0, 86, 112, 0.4));
     border-radius: var(--border-radius);
 }
 
@@ -143,34 +169,141 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background: var(--primary);
     padding: var(--spacing-unit);
-    border-radius: var(--border-radius);
-    color: #ffffff;
+    color: var(--highlight);
     width: 90%;
-    box-shadow: var(--shadow);
-    animation: fadeIn 0.5s ease-out;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.hero h2 {
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
+.hero-content h2 {
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
     margin-bottom: 0.75rem;
-}
-
-.hero p {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
 .hero-actions .btn {
     padding: 0.75rem 1.5rem;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
+    border: 2px solid var(--accent);
+}
+
+.btn-success {
+    background: var(--secondary);
+    color: var(--highlight);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background: darken(var(--secondary), 10%);
+    outline: var(--focus-outline);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--highlight);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: var(--accent);
+    color: var(--dark);
+    outline: var(--focus-outline);
+}
+
+.why-join,
+.events,
+.weather,
+.spotlights {
+    padding: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    background: var(--light);
+    border: 1px solid var(--primary);
+}
+
+.event-card,
+.current-weather,
+.forecast-card,
+.spotlight-card {
+    padding: var(--spacing-unit);
+    border-radius: var(--border-radius);
+    background: var(--light);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-unit);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.event-card:hover,
+.forecast-card:hover,
+.spotlight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-shadow);
+}
+
+.event-card h3,
+.current-weather h3,
+.forecast-card h3,
+.spotlight-card h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary);
+}
+
+.forecast-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: var(--spacing-unit);
+    padding-bottom: 0.5rem;
+}
+
+.forecast-card {
+    flex: 0 0 120px;
+    min-width: 120px;
+    border: 1px solid var(--gray);
+}
+
+.forecast-card img {
+    max-width: 50px;
+    margin: 0 auto 0.5rem;
+}
+
+.forecast-card time {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.forecast-card p {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    margin: 0.25rem 0;
+    color: var(--gray);
+}
+
+.spotlight-row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--spacing-unit);
+    padding-bottom: 0.5rem;
+}
+
+.spotlight-card {
+    flex: 0 0 200px;
+    min-width: 200px;
+}
+
+.spotlight-card img {
+    max-width: 80px;
+    margin: 0 auto 0.5rem;
 }
 
 .directory-main {
@@ -226,14 +359,14 @@ main {
 
 .view-button[aria-pressed="true"] {
     background: var(--primary);
-    color: #ffffff;
+    color: var(--highlight);
     border: none;
 }
 
 .view-button:hover,
 .view-button:focus {
     background: var(--primary);
-    color: #ffffff;
+    color: var(--highlight);
     border: none;
     outline: var(--focus-outline);
     box-shadow: var(--glow-shadow);
@@ -258,7 +391,7 @@ main {
     display: grid;
     gap: var(--spacing-unit);
     animation: fadeIn 0.5s ease-out;
-    background: var(--directory-bg);
+    background: var(--light);
     padding: var(--spacing-unit);
     border-radius: var(--border-radius);
     border: 1px solid var(--primary);
@@ -346,7 +479,7 @@ main {
 
 .member-level--basic {
     background: #a16207;
-    color: #ffffff;
+    color: var(--highlight);
 }
 
 .member-content address,
@@ -365,116 +498,6 @@ main {
     color: var(--accent);
 }
 
-.events,
-.weather,
-.spotlights,
-.why-join {
-    background: var(--light);
-    padding: var(--spacing-unit);
-    margin-bottom: calc(var(--spacing-unit) * 1.5);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    animation: fadeIn 0.5s ease-out;
-    border: 1px solid var(--primary);
-}
-
-.weather {
-    background: var(--weather-bg);
-    border: 1px solid var(--accent);
-}
-
-.event-card,
-.current-weather,
-.forecast-row,
-.spotlight-card {
-    padding: var(--spacing-unit);
-    border-radius: var(--border-radius);
-    background: var(--light);
-    box-shadow: var(--shadow);
-    margin-bottom: var(--spacing-unit);
-    transition: var(--transition);
-}
-
-.event-card:hover,
-.spotlight-card:hover,
-.forecast-day:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--glow-shadow);
-}
-
-.event-card h3,
-.spotlight-card h3,
-.current-weather h3 {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    color: var(--primary);
-}
-
-.forecast-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: var(--spacing-unit);
-    padding-bottom: 0.5rem;
-}
-
-.forecast-day {
-    flex: 0 0 120px;
-    min-width: 120px;
-    text-align: center;
-    padding: var(--spacing-unit);
-    border-radius: var(--border-radius);
-    background: var(--light);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--gray);
-    animation: fadeIn 0.5s ease-out;
-}
-
-.forecast-day img {
-    max-width: 50px;
-    margin: 0 auto 0.5rem;
-}
-
-.forecast-day time {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.forecast-day p {
-    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-    margin: 0.25rem 0;
-    color: var(--gray);
-}
-
-#weather-icon img {
-    max-width: 80px;
-    margin: 0 auto 0.5rem;
-}
-
-.current-weather p {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    margin: 0.25rem 0;
-}
-
-.spotlight-row {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: var(--spacing-unit);
-    padding-bottom: 0.5rem;
-}
-
-.spotlight-card {
-    flex: 0 0 200px;
-    min-width: 200px;
-}
-
-.spotlight-card img {
-    max-width: 80px;
-    margin: 0 auto 0.5rem;
-}
-
 .no-image {
     width: var(--icon-size);
     height: var(--icon-size);
@@ -482,7 +505,7 @@ main {
     align-items: center;
     justify-content: center;
     background: var(--gray);
-    color: #ffffff;
+    color: var(--highlight);
     border-radius: var(--border-radius);
     margin-bottom: var(--spacing-unit);
     font-size: 0.8rem;
@@ -500,7 +523,7 @@ main {
 .error-message button {
     margin-top: 0.5rem;
     background: var(--success);
-    color: #ffffff;
+    color: var(--highlight);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
@@ -536,7 +559,7 @@ main {
 
 footer {
     background: var(--secondary);
-    color: #ffffff;
+    color: var(--highlight);
     padding: calc(var(--spacing-unit) * 1.5);
     text-align: center;
 }
@@ -549,13 +572,13 @@ footer {
 }
 
 .social-links a {
-    color: #ffffff;
+    color: var(--highlight);
     font-size: 1.25rem;
 }
 
 .social-links a:hover,
 .social-links a:focus {
-    color: var(--highlight);
+    color: var(--accent);
     transform: scale(1.05);
 }
 

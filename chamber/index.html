@@ -35,7 +35,7 @@
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
+    <header class="site-header" role="banner">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="60" height="60"
@@ -54,7 +54,7 @@
         </div>
     </header>
 
-    <nav id="nav" class="main-navigation">
+    <nav id="nav" class="main-navigation" role="navigation">
         <ul class="nav-list">
             <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="directory.html" class="nav-link">Directory</a></li>
@@ -74,8 +74,8 @@
 
         <section class="hero" aria-labelledby="hero-heading">
             <picture>
-                <source srcset="images/bulacity.webp" type="image/webp">
-                <img src="images/bulacity.jpg" alt="Bulawayo city skyline with modern buildings" width="1200"
+                <source srcset="images/bulawayo-hero.webp" type="image/webp">
+                <img src="images/bulawayo-hero.jpg" alt="Bulawayo skyline with vibrant business community" width="1200"
                     height="600" loading="lazy">
             </picture>
             <div class="hero-content">
@@ -170,7 +170,8 @@
                 </address>
             </section>
 
-            <section class="footer-section" aria-labelledby="connect-heading">
+            <section class="footer-section" aria-labelledby="connect-heading" role="region"
+                aria-label="Social Media Links">
                 <h3 id="connect-heading" class="footer-heading">Connect</h3>
                 <div class="social-links">
                     <a href="https://facebook.com/bulawayochamber" aria-label="Facebook" target="_blank"
