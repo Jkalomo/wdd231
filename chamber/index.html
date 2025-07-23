@@ -10,15 +10,15 @@
     <title>Bulawayo Chamber of Commerce | Business Networking & Development</title>
     <meta property="og:title" content="Bulawayo Chamber of Commerce">
     <meta property="og:description" content="Supporting local business growth in Zimbabwe">
-    <meta property="og:image" content="https://yourdomain.com/images/social-home.jpg">
-    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="/images/social-home.webp">
+    <meta property="og:url" content="https://bulawayocc.org/">
     <meta property="og:type" content="website">
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="preload" href="styles/base.css" as="style">
     <link rel="preload" href="scripts/weather.js" as="script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
@@ -33,16 +33,18 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
-                <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="70" height="70"
+                <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="60" height="60"
                     class="logo" loading="lazy">
             </a>
             <div class="header-text">
                 <p class="site-name">Bulawayo Chamber of Commerce</p>
-                <p class="site-tagline">Supporting Local Business Growth</p>
+                <p class="site-tagline">Empowering Business Growth</p>
             </div>
             <button id="menu" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"
-                aria-controls="nav">
-                <span class="menu-icon" aria-hidden="true">☰</span>
+                aria-controls="nav" tabindex="0">
+                <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor" />
+                </svg>
             </button>
         </div>
     </header>
@@ -57,24 +59,49 @@
     </nav>
 
     <main id="main-content">
-        <h1 class="visually-hidden">Bulawayo Chamber of Commerce - Supporting Local Business</h1>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">Welcome</li>
+            </ul>
+        </nav>
+        <h1 class="visually-hidden">Bulawayo Chamber of Commerce - Empowering Business</h1>
 
         <section class="hero" aria-labelledby="hero-heading">
-            <img src="images/hero.jpg" alt="Bulawayo city skyline with modern buildings" width="1200" height="600"
-                loading="lazy">
+            <picture>
+                <source srcset="images/hero.webp" type="image/webp">
+                <img src="images/hero.jpg" alt="Bulawayo city skyline with modern buildings" width="1200" height="600"
+                    loading="lazy">
+            </picture>
             <div class="hero-content">
-                <h2 id="hero-heading">Discover Our Vibrant Business Community</h2>
+                <h2 id="hero-heading">Join Our Thriving Business Community</h2>
                 <div class="hero-actions">
-                    <a href="directory.html" class="btn btn-success cta">
+                    <a href="directory.html" class="btn btn-success cta" role="button">
                         <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                             <path
                                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                         </svg>
                         Explore Businesses
                     </a>
-                    <a href="join.html" class="btn btn-secondary cta">Learn About Membership</a>
+                    <a href="join.html" class="btn btn-secondary cta" role="button">Learn About Membership</a>
                 </div>
             </div>
+        </section>
+
+        <section class="why-join" aria-labelledby="why-join-heading">
+            <h2 id="why-join-heading" class="section-title">Why Join Our Chamber?</h2>
+            <ul>
+                <li><strong>Networking:</strong> Connect with local business leaders</li>
+                <li><strong>Visibility:</strong> Showcase your business in our directory</li>
+                <li><strong>Advocacy:</strong> Influence local business policies</li>
+            </ul>
+            <a href="join.html" class="btn btn-success cta" role="button">
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                </svg>
+                Become a Member
+            </a>
         </section>
 
         <section class="events" aria-labelledby="events-heading">
@@ -92,12 +119,12 @@
         </section>
 
         <section class="weather" aria-labelledby="weather-heading">
-            <h2 id="weather-heading" class="section-title">Weather Information</h2>
+            <h2 id="weather-heading" class="section-title">Weather Forecast</h2>
             <article class="current-weather js-dependent loading-message">
                 <div class="loading-spinner" aria-hidden="true"></div>
-                <p>Loading weather...</p>
+                <p>Loading current weather...</p>
             </article>
-            <div class="forecast js-dependent" id="forecast-container">
+            <div class="forecast js-dependent forecast-row" id="forecast-container">
                 <div class="loading-message">
                     <div class="loading-spinner" aria-hidden="true"></div>
                     <p>Loading forecast...</p>
@@ -105,27 +132,13 @@
             </div>
         </section>
 
-        <section class="why-join" aria-labelledby="why-join-heading">
-            <h2 id="why-join-heading" class="section-title">Why Join Our Chamber?</h2>
-            <ul>
-                <li><strong>Networking:</strong> Connect with other local business owners and professionals</li>
-                <li><strong>Visibility:</strong> Get featured in our directory and marketing materials</li>
-                <li><strong>Advocacy:</strong> Have your voice heard in local business decisions</li>
-            </ul>
-            <a href="join.html" class="btn btn-success cta">
-                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                </svg>
-                Become a Member
-            </a>
-        </section>
-
         <section class="spotlights" aria-labelledby="spotlights-heading">
             <h2 id="spotlights-heading" class="section-title">Member Spotlights</h2>
-            <div id="spotlight-container" class="js-dependent loading-message" aria-live="polite">
-                <div class="loading-spinner" aria-hidden="true"></div>
-                <p>Loading spotlights...</p>
+            <div id="spotlight-container" class="js-dependent spotlight-row" aria-live="polite">
+                <div class="loading-message">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p>Loading spotlights...</p>
+                </div>
             </div>
         </section>
     </main>
@@ -147,7 +160,7 @@
                 <address class="footer-address">
                     <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
                     <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
-                    <p>Email: <a href="mailto:contact@bulawayocc.org" aria-label="Contact us via email">contact@bulawayocc.org</a></p>
+                    <p>Email: <a href="contact.html" aria-label="Go to contact form">Contact Us</a></p>
                 </address>
             </section>
 

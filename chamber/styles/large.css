@@ -1,12 +1,12 @@
 /* large.css - Styles for screens >= 768px */
 @media (min-width: 768px) {
     :root {
-        --icon-size: 160px;
-        --spacing-unit: 2rem;
+        --icon-size: 100px;
+        --spacing-unit: 1rem;
     }
 
     header {
-        padding: var(--spacing-unit) 2.5rem;
+        padding: var(--spacing-unit) 1.5rem;
     }
 
     nav.enabled {
@@ -21,13 +21,18 @@
     nav ul {
         display: flex;
         flex-direction: row;
-        gap: 3rem;
+        gap: 2rem;
         justify-content: center;
     }
 
     nav a {
-        font-size: clamp(1.2rem, 2.5vw, 1.3rem);
-        font-weight: 700;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        font-weight: 600;
+    }
+
+    nav a[aria-current="page"] {
+        background: var(--accent);
+        color: #ffffff;
     }
 
     #menu {
@@ -35,12 +40,34 @@
     }
 
     main {
-        max-width: 1280px;
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
         gap: var(--spacing-unit);
-        padding: 2.5rem;
+        padding: 1.5rem;
+    }
+
+    .breadcrumbs {
+        grid-column: 1 / -1;
+        margin-bottom: var(--spacing-unit);
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    .breadcrumbs ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .breadcrumbs li::after {
+        content: ">";
+        margin-left: 0.5rem;
+    }
+
+    .breadcrumbs li:last-child::after {
+        content: "";
     }
 
     .hero {
@@ -67,21 +94,21 @@
     }
 
     .hero-content {
-        width: 80%;
-        padding: calc(var(--spacing-unit) * 2);
+        width: 70%;
+        padding: var(--spacing-unit);
     }
 
     .hero h2 {
-        font-size: clamp(2.25rem, 4.5vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .hero-actions {
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .hero-actions .btn {
-        padding: 1.5rem 3rem;
-        font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+        padding: 0.75rem 1.5rem;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 
     .directory-main {
@@ -92,16 +119,16 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: calc(var(--spacing-unit) * 2);
+        padding: var(--spacing-unit);
     }
 
     .view-toggle {
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .view-button {
-        padding: 1.25rem 2.5rem;
-        font-size: clamp(1.2rem, 3vw, 1.3rem);
+        padding: 0.75rem 1.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
         box-shadow: var(--shadow);
     }
 
@@ -111,23 +138,23 @@
     }
 
     .filter-select {
-        min-width: 300px;
-        padding: 1rem;
+        min-width: 250px;
+        padding: 0.5rem;
     }
 
     .grid-view {
-        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 
     .list-view .member-card {
         flex-direction: row;
         align-items: center;
         text-align: left;
-        padding: calc(var(--spacing-unit) * 1.5);
+        padding: var(--spacing-unit);
     }
 
     .list-view .member-card img {
-        width: 140px;
+        width: 100px;
         margin-right: var(--spacing-unit);
         margin-bottom: 0;
     }
@@ -136,9 +163,31 @@
         flex: 1;
     }
 
-    .spotlights {
-        grid-template-columns: repeat(2, 1fr);
+    .spotlight-row {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
         gap: var(--spacing-unit);
+        padding-bottom: 0.5rem;
+    }
+
+    .spotlight-card {
+        flex: 0 0 250px;
+        min-width: 250px;
+    }
+
+    .forecast-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: var(--spacing-unit);
+        padding-bottom: 0.5rem;
+    }
+
+    .forecast-day {
+        flex: 0 0 140px;
+        min-width: 140px;
     }
 
     .why-join ul {
@@ -151,12 +200,12 @@
         padding: var(--spacing-unit);
         background: var(--light);
         border-radius: var(--border-radius);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--shadow);
         transition: var(--transition);
     }
 
     .why-join li:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
         box-shadow: var(--glow-shadow);
     }
 
@@ -164,31 +213,42 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: calc(var(--spacing-unit) * 2.5);
+        padding: calc(var(--spacing-unit) * 1.5);
     }
 
     .footer-section {
         flex: 1;
-        min-width: 240px;
+        min-width: 200px;
         margin: 0 var(--spacing-unit);
     }
 }
 
 @media (min-width: 1024px) {
     main {
-        max-width: 1440px;
+        max-width: 1400px;
     }
 
     .hero-content {
-        width: 70%;
+        width: 60%;
     }
 
     .grid-view {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .spotlights {
-        grid-template-columns: repeat(3, 1fr);
+    .spotlight-row {
+        flex-wrap: wrap;
+        overflow-x: visible;
+    }
+
+    .spotlight-card {
+        flex: 0 0 300px;
+        min-width: 300px;
+    }
+
+    .forecast-day {
+        flex: 0 0 160px;
+        min-width: 160px;
     }
 }
 

@@ -23,11 +23,11 @@ nav.enabled {
     border: 1px solid #f87171;
     border-radius: var(--border-radius);
     margin: var(--spacing-unit);
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
 .directory-container::before {
-    content: "JavaScript is required to view the interactive directory. Please enable JavaScript or contact us at contact@bulawayocc.org for a list of members.";
+    content: "JavaScript is required for the interactive directory. Please enable JavaScript or visit our Contact page for a member list.";
     display: block;
     padding: var(--spacing-unit);
     background: #fef2f2;
@@ -35,16 +35,18 @@ nav.enabled {
     border: 1px solid #f87171;
     border-radius: var(--border-radius);
     margin-bottom: var(--spacing-unit);
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
 
-/* Added from embedded styles */
-.js-dependent {
-    display: none !important;
-}
-
-.no-js-message {
+.spotlight-row::before,
+.forecast-row::before {
+    content: "JavaScript is required to view this content. Please enable JavaScript or contact us for more information.";
     display: block;
-    padding: 1rem;
-    background: #f8d7da;
+    padding: var(--spacing-unit);
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-unit);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 }
