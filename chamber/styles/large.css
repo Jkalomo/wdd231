@@ -178,7 +178,7 @@
 
     .btn-success:hover,
     .btn-success:focus {
-        background: darken(var(--secondary), 10%);
+        background: #8C3503;
         outline: 3px solid var(--accent);
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     }
@@ -602,7 +602,7 @@
     }
 
     .error-message button:hover {
-        background: darken(var(--secondary), 10%);
+        background: #8C3503;
     }
 
     .loading-message {
