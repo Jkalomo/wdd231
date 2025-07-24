@@ -157,8 +157,7 @@ main {
 
 .hero {
     position: relative;
-    min-height: 400px;
-    /* Increased for better vertical centering */
+    min-height: 350px;
     margin-bottom: var(--spacing-unit);
     display: flex;
     align-items: center;
@@ -219,7 +218,7 @@ main {
     max-width: 100%;
     text-align: center !important;
     white-space: nowrap !important;
-    padding: 0 !important;
+    padding: 0;
 }
 
 .hero-actions {

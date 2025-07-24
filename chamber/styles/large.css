@@ -162,8 +162,7 @@
     .hero {
         grid-column: 1 / -1;
         position: relative;
-        min-height: 500px;
-        /* Increased for better vertical centering */
+        min-height: 450px;
         border-radius: 8px;
         margin-bottom: calc(var(--spacing-unit) * 2);
         display: flex;
@@ -226,7 +225,7 @@
         max-width: 100%;
         text-align: center !important;
         white-space: nowrap !important;
-        padding: 0 !important;
+        padding: 0;
     }
 
     .hero-actions {
@@ -776,8 +775,8 @@
     }
 
     .hero-content {
-        width: 85%;
-        max-width: 1300px;
+        width: 80%;
+        max-width: 1200px;
     }
 
     .hero .hero-content h2#hero-heading {

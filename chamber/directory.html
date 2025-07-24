@@ -21,9 +21,11 @@
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="preload" href="styles/base.css" as="style">
     <link rel="preload" href="scripts/directory.js" as="script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
@@ -34,7 +36,7 @@
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header" role="banner">
+    <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="60" height="60"
@@ -52,7 +54,7 @@
             </button>
         </div>
     </header>
-    <nav id="nav" class="main-navigation" role="navigation">
+    <nav id="nav" class="main-navigation">
         <ul class="nav-list">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="directory.html" class="nav-link" aria-current="page">Directory</a></li>
@@ -68,13 +70,33 @@
                 <li aria-current="page">Directory</li>
             </ul>
         </nav>
+        <section class="hero" aria-labelledby="hero-heading">
+            <picture>
+                <source srcset="images/bulacity.webp" type="image/webp">
+                <img src="images/bulawayo-hero.jpg" alt="Bulawayo skyline with vibrant business community" width="1200"
+                    height="600" loading="lazy">
+            </picture>
+            <div class="hero-content">
+                <h2 id="hero-heading">Discover Our Valued Members</h2>
+                <div class="hero-actions">
+                    <a href="join.html" class="btn btn-success cta" role="button">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                        </svg>
+                        Join Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary cta" role="button">Contact Us</a>
+                </div>
+            </div>
+        </section>
         <div class="page-header">
             <p class="page-subtitle">Discover our valued members</p>
         </div>
         <section class="directory-controls">
+            <h2>Directory Filters</h2>
             <div class="view-toggle">
-                <button class="view-button" aria-pressedtrabtn-pressed="true"><span
-                        class="view-icon">Grid</span></button>
+                <button class="view-button" aria-pressed="true"><span class="view-icon">Grid</span></button>
                 <button class="view-button"><span class="view-icon">List</span></button>
             </div>
             <select class="filter-select" aria-label="Filter by membership level">
@@ -85,6 +107,7 @@
             </select>
         </section>
         <section class="grid-view" id="directory-container">
+            <h2>Member Directory</h2>
             <div class="loading-message">
                 <div class="loading-spinner" aria-hidden="true"></div>
                 <p>Loading directory...</p>
@@ -110,8 +133,7 @@
                     <p>Email: <a href="mailto:info@bulawayo.org">info@bulawayo.org</a></p>
                 </address>
             </section>
-            <section class="footer-section" aria-labelledby="connect-heading" role="region"
-                aria-label="Social Media Links">
+            <section class="footer-section" aria-labelledby="connect-heading">
                 <h3 id="connect-heading" class="footer-heading">Connect</h3>
                 <div class="social-links">
                     <a href="https://facebook.com/bulawayochamber" aria-label="Facebook" target="_blank"
@@ -148,14 +170,11 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
+    <script src="scripts/init.js" defer></script>
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
     <script src="scripts/directory.js" defer></script>
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
 </body>
 
 </html>
