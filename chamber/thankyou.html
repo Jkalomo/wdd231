@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thank you for joining the Bulawayo Chamber of Commerce. View your submitted application details.">
+    <meta name="author" content="Jabulani Kalomo">
+    <title>Bulawayo Chamber of Commerce | Thank You</title>
+    <meta property="og:title" content="Thank You for Joining Bulawayo Chamber of Commerce">
+    <meta property="og:description"
+        content="Confirmation of your membership application to the Bulawayo Chamber of Commerce.">
+    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/social-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Bulawayo Chamber of Commerce thank you page preview">
+    <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://jkalomo.github.io/wdd231/chamber/thankyou.html">
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
+    <link rel="preload" href="styles/base.css" as="style">
+    <link rel="preload" href="scripts/thankyou.js" as="script">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <noscript>
+        <link rel="stylesheet" href="styles/noscript.css">
+    </noscript>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="60" height="60"
+                    class="logo" loading="lazy">
+            </a>
+            <div class="header-text">
+                <p class="site-name">Bulawayo Chamber of Commerce</p>
+                <p class="site-tagline">Empowering Business Growth</p>
+            </div>
+            <button id="menu" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="nav" tabindex="0">
+                <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <nav id="nav" class="main-navigation">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="directory.html" class="nav-link">Directory</a></li>
+            <li class="nav-item"><a href="join.html" class="nav-link">Join</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <main id="main-content" class="thankyou-main">
+        <h1>Thank You for Your Application</h1>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li aria-current="page">Thank You</li>
+            </ul>
+        </nav>
+        <section class="hero" aria-labelledby="hero-heading">
+            <picture>
+                <source srcset="images/bulacity.webp" type="image/webp">
+                <img src="images/bulawayo-hero.jpg" alt="Bulawayo skyline with vibrant business community" width="1200"
+                    height="600" loading="lazy">
+            </picture>
+            <div class="hero-content">
+                <h2 id="hero-heading">Application Received</h2>
+                <div class="hero-actions">
+                    <a href="index.html" class="btn btn-success cta" role="button">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                        </svg>
+                        Return Home
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary cta" role="button">Contact Us</a>
+                </div>
+            </div>
+        </section>
+        <section class="submission-details" aria-labelledby="submission-heading">
+            <h2 id="submission-heading">Your Submission Details</h2>
+            <div class="submission-card">
+                <p><strong>First Name:</strong> <span id="display-first-name"></span></p>
+                <p><strong>Last Name:</strong> <span id="display-last-name"></span></p>
+                <p><strong>Email:</strong> <span id="display-email"></span></p>
+                <p><strong>Mobile Phone:</strong> <span id="display-phone"></span></p>
+                <p><strong>Business/Organization:</strong> <span id="display-org-name"></span></p>
+                <p><strong>Submission Date:</strong> <span id="display-timestamp"></span></p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <section class="footer-section" aria-labelledby="quick-links-heading">
+                <h3 id="quick-links-heading" class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </section>
+            <section class="footer-section" aria-labelledby="contact-heading">
+                <h3 id="contact-heading" class="footer-heading">Contact Us</h3>
+                <address class="footer-address">
+                    <p>123 Jason Moyo St<br>Bulawayo, Zimbabwe</p>
+                    <p>Phone: <a href="tel:+2639123456">+263 9 123 456</a></p>
+                    <p>Email: <a href="mailto:info@bulawayo.org">info@bulawayo.org</a></p>
+                </address>
+            </section>
+            <section class="footer-section" aria-labelledby="connect-heading">
+                <h3 id="connect-heading" class="footer-heading">Connect</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com/bulawayochamber" aria-label="Facebook" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/bulawayochamber" aria-label="Twitter" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/bulawayochamber" aria-label="LinkedIn" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="footer-legal">
+            <p>© <span id="year"></span> Bulawayo Chamber of Commerce. All rights reserved.</p>
+            <p>Website by <a href="https://jkalomo.github.io" target="_blank" rel="noopener noreferrer">Jabulani
+                    Kalomo</a> | WDD 231 Project</p>
+            <p id="lastModified" class="last-updated"></p>
+        </div>
+    </footer>
+    <script src="scripts/init.js" defer></script>
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/responsive.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</body>
+
+</html>

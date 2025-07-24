@@ -1,17 +1,22 @@
-// chamber.js - Handle member directory functionality
+// chamber.js - Handle member directory functionality for Bulawayo Chamber of Commerce
 document.addEventListener('DOMContentLoaded', () => {
     const CONFIG = {
         allowedImageExtensions: ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif'],
         placeholderImage: 'images/placeholder.webp',
         defaultView: 'grid',
-        membershipLevels: { 1: 'basic', 2: 'silver', 3: 'gold' }
+        membershipLevels: {
+            1: 'np', // Map 'basic' to 'np' for non-profits
+            2: 'silver',
+            3: 'gold',
+            'bronze': 'bronze' // Handle bronze explicitly
+        }
     };
 
     const elements = {
-        gridViewBtn: document.getElementById('gridView'),
-        listViewBtn: document.getElementById('listView'),
-        memberContainer: document.getElementById('memberContainer'),
-        memberFilter: document.getElementById('memberFilter')
+        gridViewBtn: document.getElementById('grid-view'),
+        listViewBtn: document.getElementById('list-view'),
+        memberContainer: document.getElementById('members'),
+        memberFilter: document.getElementById('filter-members')
     };
 
     const state = {
@@ -29,14 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadMembers() {
         try {
-            elements.memberContainer.innerHTML = `
-                <div class="loading-message">
-                    <div class="loading-spinner"></div>
-                    <p>Loading directory...</p>
-                </div>`;
+            if (elements.memberContainer) {
+                elements.memberContainer.innerHTML = `
+                    <div class="loading-message">
+                        <div class="loading-spinner"></div>
+                        <p>Loading directory...</p>
+                    </div>`;
+            }
             const response = await fetch('data/members.json');
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             state.members = await response.json();
+            // Map membership levels if numeric
+            state.members = state.members.map(member => ({
+                ...member,
+                membership: CONFIG.membershipLevels[member.membership] || member.membership || 'np'
+            }));
+            if (elements.memberContainer) {
+                elements.memberContainer.innerHTML = ''; // Clear loading message
+            }
         } catch (error) {
             console.error('Failed to load members:', error);
             displayErrorMessage();
@@ -45,32 +60,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderMembers() {
-        if (!elements.memberContainer) return;
+        if (!elements.memberContainer) {
+            console.error('Members container not found');
+            return;
+        }
         elements.memberContainer.innerHTML = '';
 
         const filteredMembers = state.currentFilter === 'all'
             ? state.members
-            : state.members.filter(member => CONFIG.membershipLevels[member.membership] === state.currentFilter);
+            : state.members.filter(member => member.membership === state.currentFilter);
 
         if (filteredMembers.length === 0) {
             elements.memberContainer.innerHTML = '<p class="error-message">No members found for this category.</p>';
             return;
         }
 
-        filteredMembers.forEach(member => {
+        filteredMembers.forEach((member, index) => {
             const card = document.createElement('article');
-            card.className = `member-card member-level--${CONFIG.membershipLevels[member.membership]}`;
+            card.className = `member-card member-level--${member.membership}`;
             card.setAttribute('data-membership', member.membership);
-            card.setAttribute('aria-label', `${member.name}, ${CONFIG.membershipLevels[member.membership]} Member`);
+            card.setAttribute('aria-label', `${member.name}, ${member.membership} Member`);
+            card.style.setProperty('--index', index); // For animation delay
             card.innerHTML = `
                 ${renderMemberImage(member)}
                 <div class="member-content">
                     <h3>${member.name}</h3>
-                    <p class="member-level">${CONFIG.membershipLevels[member.membership] || 'Basic'} Member</p>
+                    <p class="member-level">${member.membership.charAt(0).toUpperCase() + member.membership.slice(1)} Member</p>
                     <address>${member.address}</address>
                     <p><a href="tel:${formatPhoneNumber(member.phone)}" aria-label="Call ${member.name}">${member.phone}</a></p>
                     <p><a href="${ensureUrlProtocol(member.website)}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${member.name} website">Visit Website</a></p>
-                    ${member.industry ? `<p class="industry">${member.industry}</p>` : ''}
+                    ${member.description ? `<p>${member.description}</p>` : ''}
                 </div>
             `;
             elements.memberContainer.appendChild(card);
@@ -91,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setInitialView() {
         toggleView(state.currentView, false);
-        autofix
     }
 
     function toggleView(viewType, savePreference = true) {
