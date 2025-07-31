@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </figure>
                 <address>${attraction.address}</address>
                 <p>${attraction.description}</p>
-                <a href="contact.html" class="btn btn-success" role="button">Learn More</a>
+                <a href="${attraction.url || 'contact.html'}" class="btn btn-success" target="_blank" rel="noopener noreferrer" role="button">Learn More</a>
             `;
             attractionsGrid.appendChild(card);
         });

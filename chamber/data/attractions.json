@@ -3,48 +3,80 @@
         "name": "Matobo National Park",
         "address": "45 km south of Bulawayo, Zimbabwe",
         "description": "A UNESCO World Heritage Site featuring dramatic granite kopjes, ancient rock paintings, and diverse wildlife, including black and white rhinos.",
-        "image": "images/attractions/matobo-national-park.webp"
+        "image": "images/matopo.jpeg",
+        "url": "https://en.wikipedia.org/wiki/Matobo_National_Park",
+        "phone_number": "+263 9 123 456",
+        "industry_type": "Tourism",
+        "membership_code": "NP-001"
     },
     {
         "name": "Natural History Museum of Zimbabwe",
         "address": "Centenary Park, Leopold Takawira Ave, Bulawayo, Zimbabwe",
         "description": "The largest museum in Zimbabwe, displaying extensive collections of natural history, cultural artifacts, and notable dinosaur exhibits.",
-        "image": "images/attractions/natural-history-museum.webp"
+        "image": "images/attractions/natural-history-museum.png",
+        "url": "https://www.zimbabwe.travel/natural-history-museum-bulawayo",
+        "phone_number": "+263 9 654 321",
+        "industry_type": "Cultural",
+        "membership_code": "MH-002"
     },
     {
         "name": "Khami Ruins",
         "address": "22 km west of Bulawayo, Zimbabwe",
         "description": "A UNESCO World Heritage Site showcasing the architectural legacy of the Torwa dynasty with ancient stone structures.",
-        "image": "images/attractions/khami-ruins.webp"
+        "image": "images/attractions/khami-ruins.png",
+        "url": "https://en.wikipedia.org/wiki/Khami",
+        "phone_number": "+263 9 789 123",
+        "industry_type": "Tourism",
+        "membership_code": "KR-003"
     },
     {
         "name": "Bulawayo Railway Museum",
         "address": "Prospect Avenue, Bulawayo, Zimbabwe",
         "description": "An engaging museum with vintage locomotives and exhibits that highlight Zimbabwe’s rich railway history.",
-        "image": "images/attractions/railway-museum.webp"
+        "image": "images/attractions/railway-museum.png",
+        "url": "https://www.zimrailways.com/bulawayo-railway-museum",
+        "phone_number": "+263 9 456 789",
+        "industry_type": "Cultural",
+        "membership_code": "RM-004"
     },
     {
         "name": "Chipangali Wildlife Orphanage",
         "address": "25 km southeast of Bulawayo, Zimbabwe",
         "description": "A sanctuary focused on rescuing and rehabilitating wildlife, offering educational tours and conservation experiences.",
-        "image": "images/attractions/chipangali-wildlife.webp"
+        "image": "images/attractions/chipangali-wildlife.png",
+        "url": "https://www.chipangaliwildlife.org",
+        "phone_number": "+263 9 321 654",
+        "industry_type": "Wildlife Conservation",
+        "membership_code": "CW-005"
     },
     {
         "name": "Tshabalala Game Sanctuary",
         "address": "South of Bulawayo, Zimbabwe",
         "description": "A peaceful reserve ideal for spotting antelope, zebras, and a variety of bird species in a natural habitat.",
-        "image": "images/attractions/tshabalala-sanctuary.webp"
+        "image": "images/matopo.jpg",
+        "url": "https://www.zimbabweparks.org/tshabalala-game-sanctuary",
+        "phone_number": "+263 9 987 654",
+        "industry_type": "Tourism",
+        "membership_code": "TS-006"
     },
     {
         "name": "Centenary Park",
         "address": "Leopold Takawira Avenue, Bulawayo, Zimbabwe",
         "description": "A scenic urban park perfect for relaxation, picnics, and family-friendly activities in the heart of Bulawayo.",
-        "image": "images/attractions/centenary-park.webp"
+        "image": "images/attractions/centenary-park.png",
+        "url": "https://www.bulawayo.org/centenary-park",
+        "phone_number": "N/A",
+        "industry_type": "Recreation",
+        "membership_code": "CP-007"
     },
     {
         "name": "National Gallery of Zimbabwe in Bulawayo",
         "address": "Main Street, Bulawayo, Zimbabwe",
         "description": "A cultural hub displaying contemporary and traditional Zimbabwean art, celebrating local and regional artists.",
-        "image": "images/attractions/art-gallery.webp"
+        "image": "images/attractions/art-gallery.png",
+        "url": "https://www.nationalgallery.co.zw/bulawayo-branch",
+        "phone_number": "+263 9 159 753",
+        "industry_type": "Cultural",
+        "membership_code": "NG-008"
     }
 ]
