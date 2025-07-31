@@ -5,29 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Official site of Bulawayo Chamber of Commerce. Join us to grow your business through networking, advocacy, and community development in Zimbabwe.">
+        content="Discover Bulawayo, Zimbabwe, with attractions and features for prospective Chamber of Commerce members and visitors.">
     <meta name="author" content="Jabulani Kalomo">
-    <title>Bulawayo Chamber of Commerce | Business Networking & Development</title>
-    <meta property="og:title" content="Bulawayo Chamber of Commerce">
-    <meta property="og:description"
-        content="Supporting local business growth in Zimbabwe through networking and advocacy.">
-    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/social-home.jpg">
+    <title>Discover Bulawayo - Bulawayo Chamber of Commerce</title>
+    <meta property="og:title" content="Discover Bulawayo - Bulawayo Chamber of Commerce">
+    <meta property="og:description" content="Explore Bulawayo’s vibrant culture, history, and attractions.">
+    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/social-discover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="Bulawayo Chamber of Commerce social media preview">
-    <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/index.html">
+    <meta property="og:image:alt" content="Bulawayo attractions social media preview">
+    <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://jkalomo.github.io/wdd231/chamber/">
+    <link rel="canonical" href="https://jkalomo.github.io/wdd231/chamber/discover.html">
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="preload" href="styles/base.css" as="style">
-    <link rel="preload" href="scripts/weather.js" as="script">
+    <link rel="preload" href="scripts/discover.js" as="script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 640px)">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
     <noscript>
         <link rel="stylesheet" href="styles/noscript.css">
     </noscript>
@@ -55,90 +55,57 @@
     </header>
     <nav id="nav" class="main-navigation" role="navigation">
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="directory.html" class="nav-link">Directory</a></li>
             <li class="nav-item"><a href="join.html" class="nav-link">Join</a></li>
-            <li class="nav-item"><a href="discover.html" class="nav-link">Discover</a></li>
+            <li class="nav-item"><a href="discover.html" class="nav-link" aria-current="page">Discover</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
     <main id="main-content">
-        <h1>Bulawayo Chamber of Commerce - Empowering Business</h1>
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li aria-current="page">Welcome</li>
+                <li aria-current="page">Discover</li>
             </ul>
         </nav>
         <section class="hero" aria-labelledby="hero-heading">
             <picture>
-                <source srcset="images/bulacity.webp" type="image/webp">
-                <img src="images/bulawayo-hero.jpg" alt="Bulawayo skyline with vibrant business community" width="1200"
+                <source srcset="images/hero-discover.webp" type="image/webp">
+                <img src="images/hero-discover.jpg" alt="Bulawayo cityscape with vibrant attractions" width="1200"
                     height="600" loading="lazy">
             </picture>
             <div class="hero-content">
-                <h2 id="hero-heading">Join Our Thriving Business Community</h2>
+                <h2 id="hero-heading">Explore Bulawayo</h2>
                 <div class="hero-actions">
-                    <a href="directory.html" class="btn btn-success cta" role="button">
+                    <a href="join.html" class="btn btn-success cta" role="button">
                         <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                             <path
                                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                         </svg>
-                        Explore Businesses
+                        Join Now
                     </a>
-                    <a href="join.html" class="btn btn-secondary cta" role="button">Learn About Membership</a>
+                    <a href="contact.html" class="btn btn-secondary cta" role="button">Contact Us</a>
                 </div>
             </div>
         </section>
-        <section class="why-join" aria-labelledby="why-join-heading">
-            <h2 id="why-join-heading" class="section-title">Why Join Our Chamber?</h2>
-            <ul>
-                <li><strong>Networking:</strong> Connect with local business leaders</li>
-                <li><strong>Visibility:</strong> Showcase your business in our directory</li>
-                <li><strong>Advocacy:</strong> Influence local business policies</li>
-            </ul>
-            <a href="join.html" class="btn btn-success cta" role="button">
-                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                </svg>
-                Become a Member
-            </a>
-        </section>
-        <section class="events" aria-labelledby="events-heading">
-            <h2 id="events-heading" class="section-title">Upcoming Events</h2>
-            <article class="event-card">
-                <h3>Business Networking Mixer</h3>
-                <p><time datetime="2025-08-15T17:30">August 15, 2025, 5:30 PM - 7:30 PM</time></p>
-                <p>Location: Chamber Office</p>
-            </article>
-            <article class="event-card">
-                <h3>Economic Forum</h3>
-                <p><time datetime="2025-09-22T09:00">September 22, 2025, 9:00 AM - 12:00 PM</time></p>
-                <p>Location: Bulawayo City Hall</p>
-            </article>
-        </section>
-        <section class="weather" aria-labelledby="weather-heading">
-            <h2 id="weather-heading" class="section-title">Weather Forecast</h2>
-            <article class="current-weather js-dependent loading-message">
-                <h3 id="current-weather-heading">Current Weather</h3>
-                <div class="loading-spinner" aria-hidden="true"></div>
-                <p>Loading current weather...</p>
-            </article>
-            <div class="forecast js-dependent forecast-row" id="forecast-container">
-                <div class="loading-message">
-                    <div class="loading-spinner" aria-hidden="true"></div>
-                    <p>Loading forecast...</p>
+        <section class="discover-main" aria-labelledby="discover-heading">
+            <h1 id="discover-heading" class="page-header">Discover Bulawayo</h1>
+            <p class="page-subtitle">Experience the vibrant culture, history, and natural beauty of Bulawayo, Zimbabwe's
+                second-largest city.</p>
+            <div class="discover-content">
+                <div class="attractions-grid">
+                    <div class="loading-message">
+                        <div class="loading-spinner" aria-hidden="true"></div>
+                        <p>Loading attractions...</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="spotlights" aria-labelledby="spotlights-heading">
-            <h2 id="spotlights-heading" class="section-title">Member Spotlights</h2>
-            <div id="spotlight-container" class="js-dependent spotlight-row" aria-live="polite">
-                <div class="loading-message">
-                    <div class="loading-spinner" aria-hidden="true"></div>
-                    <p>Loading spotlights...</p>
-                </div>
+                <aside class="visit-info" aria-labelledby="visit-info-heading">
+                    <h2 id="visit-info-heading" class="section-title">Visitor Info</h2>
+                    <p id="visit-message">Checking your visit history...</p>
+                    <p>Bulawayo, with a population of approximately 653,337 (2022 census), is a hub of culture and
+                        industry, offering a welcoming environment for businesses and visitors.</p>
+                </aside>
             </div>
         </section>
     </main>
@@ -203,10 +170,7 @@
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
-    <script src="scripts/emailhandler.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlight.js" defer></script>
-    <script src="scripts/engagement.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
     <script>
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');

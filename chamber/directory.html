@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Explore the Bulawayo Chamber of Commerce business directory to connect with local businesses and members in Zimbabwe.">
+        content="Business directory of Bulawayo Chamber of Commerce members, showcasing local businesses and their services.">
     <meta name="author" content="Jabulani Kalomo">
-    <title>Bulawayo Chamber of Commerce | Business Directory</title>
-    <meta property="og:title" content="Bulawayo Chamber of Commerce Directory">
-    <meta property="og:description" content="Discover local businesses and members in Bulawayo, Zimbabwe.">
-    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/social-home.jpg">
+    <title>Business Directory - Bulawayo Chamber of Commerce</title>
+    <meta property="og:title" content="Business Directory - Bulawayo Chamber of Commerce">
+    <meta property="og:description"
+        content="Discover our valued members and their contributions to Bulawayo’s economy.">
+    <meta property="og:image" content="https://jkalomo.github.io/wdd231/chamber/images/social-directory.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="Bulawayo Chamber of Commerce directory preview">
+    <meta property="og:image:alt" content="Bulawayo business directory social media preview">
     <meta property="og:url" content="https://jkalomo.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://jkalomo.github.io/wdd231/chamber/directory.html">
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="preload" href="styles/base.css" as="style">
     <link rel="preload" href="scripts/directory.js" as="script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/small.css" media="(max-width: 767.98px)">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 640px)">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
     <noscript>
         <link rel="stylesheet" href="styles/noscript.css">
     </noscript>
@@ -36,7 +36,7 @@
 
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
+    <header class="site-header" role="banner">
         <div class="header-container">
             <a href="index.html" class="logo-link">
                 <img src="images/bulawayo.png" alt="Bulawayo Chamber of Commerce Logo" width="60" height="60"
@@ -54,16 +54,16 @@
             </button>
         </div>
     </header>
-    <nav id="nav" class="main-navigation">
+    <nav id="nav" class="main-navigation" role="navigation">
         <ul class="nav-list">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="directory.html" class="nav-link" aria-current="page">Directory</a></li>
             <li class="nav-item"><a href="join.html" class="nav-link">Join</a></li>
+            <li class="nav-item"><a href="discover.html" class="nav-link">Discover</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
     </nav>
-    <main id="main-content" class="directory-main">
-        <h1>Bulawayo Chamber of Commerce Business Directory</h1>
+    <main id="main-content">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -72,9 +72,9 @@
         </nav>
         <section class="hero" aria-labelledby="hero-heading">
             <picture>
-                <source srcset="images/bulacity.webp" type="image/webp">
-                <img src="images/bulawayo-hero.jpg" alt="Bulawayo skyline with vibrant business community" width="1200"
-                    height="600" loading="lazy">
+                <source srcset="images/hero-directory.webp" type="image/webp">
+                <img src="images/hero-directory.jpg" alt="Bulawayo business community" width="1200" height="600"
+                    loading="lazy">
             </picture>
             <div class="hero-content">
                 <h2 id="hero-heading">Discover Our Valued Members</h2>
@@ -90,27 +90,30 @@
                 </div>
             </div>
         </section>
-        <div class="page-header">
-            <p class="page-subtitle">Discover our valued members</p>
-        </div>
-        <section class="directory-controls">
-            <h2>Directory Filters</h2>
-            <div class="view-toggle">
-                <button class="view-button" aria-pressed="true"><span class="view-icon">Grid</span></button>
-                <button class="view-button"><span class="view-icon">List</span></button>
+        <section class="directory-main" aria-labelledby="directory-heading">
+            <h1 id="directory-heading" class="page-header">Discover Our Valued Members</h1>
+            <div class="directory-controls">
+                <div class="view-toggle" aria-labelledby="view-toggle-heading">
+                    <h2 id="view-toggle-heading" class="visually-hidden">Directory View Options</h2>
+                    <button id="grid-view" class="btn btn-secondary active" aria-pressed="true">Grid</button>
+                    <button id="list-view" class="btn btn-secondary" aria-pressed="false">List</button>
+                </div>
+                <div class="membership-filter" aria-labelledby="filter-heading">
+                    <h2 id="filter-heading" class="visually-hidden">Membership Filters</h2>
+                    <select id="membership-filter" aria-label="Filter members by membership level"
+                        aria-controls="directory-grid">
+                        <option value="all" selected>All Members</option>
+                        <option value="3">Gold Members</option>
+                        <option value="2">Silver Members</option>
+                        <option value="1">Basic Members</option>
+                    </select>
+                </div>
             </div>
-            <select class="filter-select" aria-label="Filter by membership level">
-                <option value="all">All Members</option>
-                <option value="gold">Gold Members</option>
-                <option value="silver">Silver Members</option>
-                <option value="basic">Basic Members</option>
-            </select>
-        </section>
-        <section class="grid-view" id="directory-container">
-            <h2>Member Directory</h2>
-            <div class="loading-message">
-                <div class="loading-spinner" aria-hidden="true"></div>
-                <p>Loading directory...</p>
+            <div class="directory-grid" id="directory-grid" aria-live="polite">
+                <div class="loading-message">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p>Loading directory...</p>
+                </div>
             </div>
         </section>
     </main>
@@ -122,6 +125,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join Us</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </section>
@@ -133,7 +137,8 @@
                     <p>Email: <a href="mailto:info@bulawayo.org">info@bulawayo.org</a></p>
                 </address>
             </section>
-            <section class="footer-section" aria-labelledby="connect-heading">
+            <section class="footer-section" aria-labelledby="connect-heading" role="region"
+                aria-label="Social Media Links">
                 <h3 id="connect-heading" class="footer-heading">Connect</h3>
                 <div class="social-links">
                     <a href="https://facebook.com/bulawayochamber" aria-label="Facebook" target="_blank"
@@ -170,11 +175,14 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
-    <script src="scripts/init.js" defer></script>
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
     <script src="scripts/directory.js" defer></script>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
 </body>
 
 </html>

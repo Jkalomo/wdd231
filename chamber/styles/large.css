@@ -468,6 +468,30 @@
         gap: 1rem;
     }
 
+    .membership-filter {
+        display: flex;
+        align-items: center;
+    }
+
+    #membership-filter {
+        padding: 0.75rem;
+        border: 1px solid var(--secondary);
+        border-radius: 6px;
+        min-width: 250px;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        background: var(--light);
+        color: var(--primary);
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #membership-filter:focus {
+        outline: 3px solid var(--accent);
+        border-color: var(--primary);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
     .view-button {
         padding: 0.75rem 1.5rem;
         font-size: clamp(0.9rem, 2vw, 1rem);
@@ -502,16 +526,6 @@
         width: 20px;
         height: 20px;
         margin: 0 auto;
-    }
-
-    .filter-select {
-        padding: 0.5rem;
-        border: 1px solid var(--secondary);
-        border-radius: 6px;
-        min-width: 250px;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-        background: var(--light);
-        color: var(--primary);
     }
 
     .grid-view {
@@ -996,5 +1010,57 @@
     .spotlight-card {
         flex: 0 0 320px;
         min-width: 320px;
+    }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-content {
+        display: grid;
+        grid-template-areas:
+            "grid sidebar";
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .attractions-grid {
+        grid-area: grid;
+        display: grid;
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        gap: 2rem;
+    }
+
+    .visit-info {
+        grid-area: sidebar;
+        padding: 1.5rem;
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .attraction-card {
+        display: grid;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .attraction-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .attraction-card img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }

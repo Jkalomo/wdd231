@@ -1,0 +1,145 @@
+/* Medium screens (641px–1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .discover-content {
+        display: grid;
+        grid-template-areas:
+            "grid sidebar";
+        grid-template-columns: 2fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .attractions-grid {
+        grid-area: grid;
+        display: grid;
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        gap: 1.5rem;
+    }
+
+    .visit-info {
+        grid-area: sidebar;
+        padding: 1rem;
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .attraction-card {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .attraction-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .attraction-card img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .directory-controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: var(--spacing-unit);
+        background: var(--light);
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--primary);
+        margin-bottom: var(--spacing-unit);
+    }
+
+    .view-toggle {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .membership-filter {
+        display: flex;
+        align-items: center;
+    }
+
+    #membership-filter {
+        padding: 0.5rem;
+        border: 1px solid var(--secondary);
+        border-radius: 6px;
+        min-width: 200px;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        background: var(--light);
+        color: var(--primary);
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #membership-filter:focus {
+        outline: 2px solid var(--accent);
+        border-color: var(--primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid-view {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .list-view .member-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: var(--spacing-unit);
+    }
+
+    .list-view .member-card img {
+        width: var(--icon-size);
+        margin-right: var(--spacing-unit);
+        margin-bottom: 0;
+    }
+
+    .list-view .member-content {
+        flex: 1;
+    }
+
+    .member-card {
+        background: var(--light);
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        padding: var(--spacing-unit);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: fadeIn 0.7s ease-out;
+        border: 1px solid var(--primary);
+    }
+
+    .member-card:hover,
+    .member-card:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
+    }
+
+    .member-card img {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        object-fit: contain;
+        border-radius: 6px;
+        margin-bottom: var(--spacing-unit);
+    }
+}
