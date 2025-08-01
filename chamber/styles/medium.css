@@ -27,18 +27,22 @@
     }
 
     .attraction-card {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 0.75rem;
         padding: 1rem;
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-height: 400px;
+        /* Ensures minimum height */
     }
 
     .attraction-card img {
         width: 100%;
         height: auto;
         aspect-ratio: 3/2;
+        /* Matches 300x200px design */
         object-fit: cover;
         border-radius: 4px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -47,6 +51,29 @@
     .attraction-card img:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .attraction-card h2,
+    .attraction-card address,
+    .attraction-card p {
+        margin: 0.5rem 0;
+    }
+
+    .attraction-card a {
+        margin-top: auto;
+        /* Pushes button to bottom */
+        padding: 0.5rem 1rem;
+        background: var(--secondary, #A63D03);
+        color: var(--highlight, #FFFFFF);
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .attraction-card a:hover,
+    .attraction-card a:focus {
+        background: #8C3503;
+        outline: 2px solid var(--accent, #D4A017);
     }
 
     .directory-controls {

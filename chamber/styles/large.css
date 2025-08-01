@@ -828,10 +828,6 @@
         grid-area: grid;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            "card1 card2 card3"
-            "card4 card5 card6"
-            "card7 card8 .";
         gap: 1.5rem;
     }
 
@@ -855,6 +851,8 @@
         flex-direction: column;
         border: 1px solid var(--primary);
         transition: var(--transition);
+        min-height: 450px;
+        /* Ensures minimum height for large screens */
     }
 
     .attraction-card:hover {
@@ -876,7 +874,9 @@
 
     .attraction-card img {
         width: 100%;
-        height: 200px;
+        height: auto;
+        aspect-ratio: 3/2;
+        /* Matches 300x200px design, overriding fixed height */
         object-fit: cover;
         transition: transform 0.3s ease;
     }
@@ -894,9 +894,10 @@
     .attraction-card p {
         margin-bottom: 1rem;
         flex-grow: 1;
+        /* Allows text to expand */
     }
 
-    .attraction-card .btn {
+    .attraction-card a {
         align-self: flex-start;
         margin-top: auto;
         padding: 0.5rem 1rem;
@@ -907,36 +908,10 @@
         font-weight: 600;
     }
 
-    .attraction-card:nth-child(1) {
-        grid-area: card1;
-    }
-
-    .attraction-card:nth-child(2) {
-        grid-area: card2;
-    }
-
-    .attraction-card:nth-child(3) {
-        grid-area: card3;
-    }
-
-    .attraction-card:nth-child(4) {
-        grid-area: card4;
-    }
-
-    .attraction-card:nth-child(5) {
-        grid-area: card5;
-    }
-
-    .attraction-card:nth-child(6) {
-        grid-area: card6;
-    }
-
-    .attraction-card:nth-child(7) {
-        grid-area: card7;
-    }
-
-    .attraction-card:nth-child(8) {
-        grid-area: card8;
+    .attraction-card a:hover,
+    .attraction-card a:focus {
+        background: #8C3503;
+        outline: 2px solid var(--accent);
     }
 
     .site-footer {
@@ -1129,9 +1104,6 @@
 
     .attractions-grid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
     }
 }
 

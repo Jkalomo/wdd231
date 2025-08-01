@@ -655,13 +655,48 @@ main {
         padding: 1rem;
         background: var(--light);
         border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        min-height: 350px;
+        /* Ensures minimum height to prevent squashing */
     }
 
     .attraction-card img {
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9;
+        aspect-ratio: 3/2;
+        /* Matches 300x200px design, overriding 16/9 */
         object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .attraction-card img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .attraction-card h2,
+    .attraction-card address,
+    .attraction-card p {
+        margin: 0.5rem 0;
+    }
+
+    .attraction-card a {
+        margin-top: auto;
+        /* Pushes button to bottom */
+        padding: 0.5rem 1rem;
+        background: var(--secondary);
+        color: var(--highlight);
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .attraction-card a:hover,
+    .attraction-card a:focus {
+        background: #8C3503;
+        outline: 2px solid var(--accent);
     }
 
     /* Navigation */
