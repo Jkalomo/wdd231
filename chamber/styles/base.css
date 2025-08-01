@@ -1,4 +1,4 @@
-/* large.css - Styles for screens >= 768px for Bulawayo Chamber of Commerce */
+/* base.css - Styles for Bulawayo Chamber of Commerce (applies to screens >= 768px) */
 @media (min-width: 768px) {
     :root {
         --icon-size: 100px;
@@ -6,6 +6,19 @@
         --font-size-h2: 1.75rem;
         --font-size-h3: 1.25rem;
         --font-size-body: 1rem;
+        --primary: #003A4B;
+        --secondary: #A63D03;
+        --accent: #D4A017;
+        --highlight: #FFFFFF;
+        --light: #F8FAFC;
+        --gray: #4B5E6A;
+        --dark: #1A2526;
+        --primary-darken: #002A36;
+        --border-radius: 8px;
+        --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --glow-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        --focus-outline: 2px solid #D4A017;
+        --transition: all 0.3s ease;
     }
 
     header {
@@ -475,6 +488,104 @@
         color: var(--accent);
     }
 
+    /* Enhanced Attraction Card Styles for Discovery Page */
+    .discover-content {
+        display: grid;
+        grid-template-areas: "grid sidebar";
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .attractions-grid {
+        grid-area: grid;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: calc(var(--spacing-unit) * 1.5);
+        align-items: stretch;
+        /* Ensures consistent height */
+    }
+
+    .attraction-card {
+        background: var(--light);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: var(--spacing-unit);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        animation: fadeIn 0.5s ease-out;
+        border: 1px solid var(--primary);
+        min-height: 0;
+        /* Prevents squashing */
+    }
+
+    .attraction-card:hover,
+    .attraction-card:focus-within {
+        transform: translateY(-2px);
+        box-shadow: var(--glow-shadow);
+        border-color: var(--accent);
+    }
+
+    .attraction-card img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 3/2;
+        /* Consistent with other files */
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        margin-bottom: var(--spacing-unit);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .attraction-card img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .attraction-card-content {
+        flex-grow: 1;
+        /* Allows content to expand and balance height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .attraction-card h3 {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        margin: 0 0 0.5rem;
+        color: var(--primary);
+    }
+
+    .attraction-card p {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        margin: 0.5rem 0;
+        color: var(--gray);
+        flex-grow: 1;
+        /* Prevents content overflow */
+    }
+
+    .attraction-card a {
+        font-weight: 600;
+        color: var(--secondary);
+    }
+
+    .attraction-card a:hover,
+    .attraction-card a:focus {
+        color: var(--accent);
+    }
+
+    .visit-info {
+        grid-area: sidebar;
+        padding: 1.5rem;
+        background: var(--light);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+    }
+
     .footer-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -596,6 +707,17 @@
     .spotlight-card {
         flex: 0 0 250px;
         min-width: 250px;
+    }
+
+    .attractions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    .attraction-card img {
+        aspect-ratio: 3/2;
+        /* Consistent with other files */
+        min-height: 250px;
+        /* Enhanced for larger screens */
     }
 }
 

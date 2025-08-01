@@ -932,39 +932,46 @@ main {
     .attractions-grid {
         grid-area: grid;
         display: grid;
-        grid-template-areas:
-            "card1"
-            "card2"
-            "card3"
-            "card4"
-            "card5"
-            "card6"
-            "card7"
-            "card8";
+        grid-template-columns: 1fr;
         gap: 1rem;
+        align-items: stretch;
     }
 
     .visit-info {
         grid-area: sidebar;
+        padding: 1rem;
+        background: var(--light);
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
 
     .attraction-card {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 0.5rem;
         padding: 1rem;
-        background: #fff;
+        background: var(--light);
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-height: 0;
     }
 
     .attraction-card img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         aspect-ratio: 3/2;
         object-fit: cover;
         border-radius: 4px;
     }
+
+    .attraction-card-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
+
 /* Add to small.css */
 .contact-content {
     display: grid;
