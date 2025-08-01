@@ -817,7 +817,8 @@
 
     .discover-content {
         display: grid;
-        grid-template-areas: "grid sidebar";
+        grid-template-areas:
+            "grid sidebar";
         grid-template-columns: 3fr 1fr;
         gap: 2rem;
         width: 100%;
@@ -828,10 +829,10 @@
     .attractions-grid {
         grid-area: grid;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
         gap: 1.5rem;
-        justify-content: center;
-        align-items: stretch;
     }
 
     .visit-info {
@@ -1105,7 +1106,9 @@
     }
 
     .attractions-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
     }
 }
 

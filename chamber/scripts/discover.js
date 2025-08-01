@@ -36,19 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
         attractions.forEach((attraction, index) => {
             const card = document.createElement('article');
             card.classList.add('attraction-card');
-            // Remove or adjust gridArea if not needed (commented out)
-            // card.style.gridArea = `card${index + 1}`; // Uncomment and adjust CSS if using named grid areas
+            card.style.gridArea = `card${index + 1}`; // Assign named grid areas
             card.innerHTML = `
-                <h2>${attraction.name}</h2>
-                <figure>
-                    <img src="${attraction.image}" alt="${attraction.name}" loading="lazy">
-                </figure>
-                <address>${attraction.address}</address>
-                <p>${attraction.description}</p>
-                <a href="${attraction.url || 'contact.html'}" class="btn btn-success" target="_blank" rel="noopener noreferrer" role="button">Learn More</a>
-            `;
+            <h2>${attraction.name}</h2>
+            <figure>
+                <img src="${attraction.image}" alt="${attraction.name}" loading="lazy">
+            </figure>
+            <address>${attraction.address}</address>
+            <p>${attraction.description}</p>
+            <a href="${attraction.url || 'contact.html'}" class="btn btn-success" target="_blank" rel="noopener noreferrer" role="button">Learn More</a>
+        `;
             attractionsGrid.appendChild(card);
         });
+        
     }
 
     // Handle visit messages using localStorage

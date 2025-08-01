@@ -640,7 +640,15 @@ main {
     .attractions-grid {
         grid-area: grid;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7"
+            "card8";
         gap: 1rem;
     }
 
@@ -658,22 +666,14 @@ main {
         display: flex;
         flex-direction: column;
         min-height: 350px;
-        /* Ensures minimum height to prevent squashing */
     }
 
     .attraction-card img {
         width: 100%;
         height: auto;
         aspect-ratio: 3/2;
-        /* Matches 300x200px design, overriding 16/9 */
         object-fit: cover;
         border-radius: 4px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .attraction-card img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .attraction-card h2,
@@ -684,7 +684,6 @@ main {
 
     .attraction-card a {
         margin-top: auto;
-        /* Pushes button to bottom */
         padding: 0.5rem 1rem;
         background: var(--secondary);
         color: var(--highlight);
