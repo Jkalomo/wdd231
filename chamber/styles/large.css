@@ -187,18 +187,18 @@
         outline: var(--focus-outline, 2px solid #D4A017);
     }
 
-    /* Footer styles to ensure visibility */
+    /* Footer styles */
     .site-footer {
         display: block;
-        /* Ensure footer is visible */
         background: var(--primary, #003A4B);
         color: var(--highlight, #FFFFFF);
         padding: calc(var(--spacing-unit, 1rem) * 2);
         width: 100%;
         box-sizing: border-box;
         position: relative;
-        /* Prevent overlap issues */
         z-index: 10;
+        margin-top: 2rem;
+        /* Ensure footer is below content */
     }
 
     .footer-content {
@@ -747,4 +747,313 @@
 
     .member-content h3 {
         font-size: clamp(1rem, 3vw, 1.25rem);
-        margin:
+        margin: 0 0 0.5rem;
+        color: var(--primary, #003A4B);
+    }
+
+    .member-level {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        border-radius: 100px;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 0.5rem 0;
+    }
+
+    .member-level--gold {
+        background: var(--accent, #D4A017);
+        color: var(--dark, #1A2526);
+    }
+
+    .member-level--silver {
+        background: #9ca3af;
+        color: var(--dark, #1A2526);
+    }
+
+    .member-level--basic {
+        background: var(--secondary, #A63D03);
+        color: var(--highlight, #FFFFFF);
+    }
+
+    .member-content address,
+    .member-content p {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        margin: 0.5rem 0;
+        color: var(--gray, #4B5E6A);
+    }
+
+    .member-content a {
+        font-weight: 600;
+        color: var(--primary, #003A4B);
+    }
+
+    .member-content a:hover,
+    .member-content a:focus {
+        color: var(--accent, #D4A017);
+    }
+
+    .no-image {
+        width: var(--icon-size, 100px);
+        height: var(--icon-size, 100px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray, #4B5E6A);
+        color: var(--highlight, #FFFFFF);
+        border-radius: var(--border-radius, 8px);
+        margin-bottom: var(--spacing-unit, 1rem);
+        font-size: 0.8rem;
+    }
+
+    .join-content {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: calc(var(--spacing-unit, 1rem) * 2);
+    }
+
+    .join-form {
+        grid-column: 1;
+    }
+
+    .membership-levels {
+        grid-column: 2;
+    }
+
+    .join-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .join-form label {
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: var(--primary, #003A4B);
+    }
+
+    .required {
+        color: #991b1b;
+        margin-left: 0.25rem;
+    }
+
+    .join-form input,
+    .join-form select,
+    .join-form textarea {
+        padding: 0.5rem;
+        border: 1px solid var(--gray, #4B5E6A);
+        border-radius: var(--border-radius, 8px);
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        background: var(--highlight, #FFFFFF);
+        color: var(--dark, #1A2526);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .join-form textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .join-form input[type="submit"] {
+        background: var(--secondary, #A63D03);
+        color: var(--highlight, #FFFFFF);
+        border: none;
+        padding: 0.75rem;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition, all 0.3s ease);
+    }
+
+    .join-form input[type="submit"]:hover,
+    .join-form input[type="submit"]:focus {
+        background: #8C3503;
+        outline: var(--focus-outline, 2px solid #D4A017);
+    }
+
+    .membership-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit, 1rem) * 1.5);
+    }
+
+    .membership-card {
+        padding: var(--spacing-unit, 1rem);
+        border-radius: var(--border-radius, 8px);
+        background: var(--light, #F8FAFC);
+        box-shadow: var(--shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+        text-align: center;
+        border: 1px solid var(--gray, #4B5E6A);
+        cursor: pointer;
+        animation: fadeInUp 0.7s ease-out forwards;
+    }
+
+    .membership-card h3 {
+        font-size: var(--font-size-h3, 1.25rem);
+        color: var(--primary, #003A4B);
+        margin-bottom: 0.5rem;
+    }
+
+    .membership-card p {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        color: var(--gray, #4B5E6A);
+        margin-bottom: 1rem;
+    }
+
+    .membership-card:hover,
+    .membership-card:focus {
+        transform: translateY(-2px);
+        box-shadow: var(--glow-shadow, 0 4px 8px rgba(0, 0, 0, 0.2));
+        border-color: var(--accent, #D4A017);
+    }
+
+    .modal {
+        border: none;
+        border-radius: var(--border-radius, 8px);
+        background: var(--light, #F8FAFC);
+        padding: 2rem;
+        max-width: 500px;
+        margin: 2rem auto;
+        box-shadow: var(--glow-shadow, 0 4px 8px rgba(0, 0, 0, 0.2));
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .modal-content h3 {
+        font-size: var(--font-size-h2, 1.75rem);
+        color: var(--primary, #003A4B);
+        margin-bottom: 1rem;
+    }
+
+    .modal-content ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal-content li {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: var(--gray, #4B5E6A);
+        margin-bottom: 0.5rem;
+    }
+
+    .modal-close {
+        background: var(--secondary, #A63D03);
+        color: var(--highlight, #FFFFFF);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius, 8px);
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition, all 0.3s ease);
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+        background: #8C3503;
+        outline: var(--focus-outline, 2px solid #D4A017);
+    }
+
+    .submission-details {
+        grid-column: 1 / -1;
+    }
+
+    .submission-card p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: var(--gray, #4B5E6A);
+        margin: 0.5rem 0;
+    }
+
+    .submission-card strong {
+        color: var(--primary, #003A4B);
+    }
+
+    .error-message {
+        text-align: center;
+        padding: var(--spacing-unit, 1rem);
+        border-radius: var(--border-radius, 8px);
+        background: #fef2f2;
+        color: #991b1b;
+        box-shadow: var(--shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+        margin-bottom: var(--spacing-unit, 1rem);
+    }
+
+    .error-message button {
+        margin-top: 0.5rem;
+        background: var(--secondary, #A63D03);
+        color: var(--highlight, #FFFFFF);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius, 8px);
+        transition: var(--transition, all 0.3s ease);
+    }
+
+    .error-message button:hover {
+        background: #8C3503;
+    }
+
+    .loading-message {
+        text-align: center;
+        padding: var(--spacing-unit, 1rem);
+        border-radius: var(--border-radius, 8px);
+        background: var(--light, #F8FAFC);
+        box-shadow: var(--shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+        margin-bottom: var(--spacing-unit, 1rem);
+    }
+
+    .loading-spinner {
+        width: 24px;
+        height: 24px;
+        border: 3px solid var(--light, #F8FAFC);
+        border-top-color: var(--primary, #003A4B);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1600px;
+    }
+
+    .spotlight-card {
+        flex: 0 0 320px;
+        min-width: 320px;
+    }
+}
