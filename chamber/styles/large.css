@@ -1044,9 +1044,11 @@
 
 @media (min-width: 1024px) {
     main {
-        max-width: 1600px;
-        padding: 0;/* Reduced padding for edge content */
+        max-width: 1600px !important;
+        padding: 0 !important;
         margin: 0 auto;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 
     .hero-content {
@@ -1082,16 +1084,21 @@
             "card5 card6 card7 card8";
     }
 
-    .discover-content {
+    /* Enforce full width and height for discover-content */
+    main>.discover-content {
         display: -ms-grid;
         display: grid;
         grid-template-areas: "grid sidebar";
         grid-template-columns: 4fr 1fr;
         gap: 1.5rem;
-        width: 100%;
+        width: 100% !important;
+        max-width: 1600px !important;
         margin: 0 auto;
-        max-width: 1600px;
-        min-height: 0;
+        min-height: 450px !important;
+        /* Match card height */
+        box-sizing: border-box;
+        padding: 0 !important;
+        /* Remove any inherited padding */
     }
 
     .attractions-grid {
@@ -1104,14 +1111,27 @@
             "card5 card6 card7 card8";
         gap: 1.5rem;
         justify-items: stretch;
-        width: 100%;
-        min-height: 0;
+        width: 100% !important;
+        min-height: 450px !important;
+        /* Prevent collapse */
+        box-sizing: border-box;
     }
 
-
     .attraction-card {
-        min-height: 450px; /* Ensure cards maintain height */
-        }
+        min-height: 450px !important;
+        /* Consistent height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Distribute content */
+    }
+
+    /* Ensure visit-info aligns without constraining */
+    .visit-info {
+        min-width: 250px;
+        height: auto;
+        box-sizing: border-box;
+    }
 }
 
 @media (min-width: 1200px) {
