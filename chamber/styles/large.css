@@ -1098,7 +1098,7 @@
         /* Match card height */
         box-sizing: border-box;
         padding: 0 !important;
-        /* Remove any inherited padding */
+/* Remove any inherited padding */
     }
 
     .attractions-grid {
@@ -1117,21 +1117,33 @@
         box-sizing: border-box;
     }
 
-    .attraction-card {
-        min-height: 450px !important;
-        /* Consistent height */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* Distribute content */
-    }
+.main-wrapper {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start;
+        }
+
+ .attractions-grid {
+     flex: 3;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-areas:
+         "a1 a2 a3 a4"
+         "a5 a6 a7 a8";
+  }
+  }
 
     /* Ensure visit-info aligns without constraining */
-    .visit-info {
-        min-width: 250px;
-        height: auto;
-        box-sizing: border-box;
-    }
+  .visit-info {
+      flex: 1;
+      /* Take less space */
+      max-width: 300px;
+      position: sticky;
+      top: 1;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media (min-width: 1200px) {

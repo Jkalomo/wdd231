@@ -70,6 +70,7 @@
                 <li aria-current="page">Discover</li>
             </ul>
         </nav>
+
         <section class="hero" aria-labelledby="hero-heading">
             <picture>
                 <source srcset="images/bulacity.webp" type="image/webp">
@@ -90,23 +91,27 @@
                 </div>
             </div>
         </section>
+
         <section class="discover-main" aria-labelledby="discover-heading">
             <h1 id="discover-heading" class="page-header">Discover Bulawayo</h1>
             <p class="page-subtitle">Experience the vibrant culture, history, and natural beauty of Bulawayo, Zimbabwe's
                 second-largest city.</p>
-            <div class="discover-content">
-                <div class="attractions-grid" id="attractions-grid">
-                    <!-- Attractions will be loaded dynamically via JavaScript -->
-                </div>
-                <aside class="visit-info" aria-labelledby="visit-info-heading">
+
+            <main class="main-wrapper">
+                <aside id="visitor-message-container" aria-labelledby="visit-info-heading">
                     <h2 id="visit-info-heading" class="section-title">Visitor Info</h2>
                     <p id="visit-message">Checking your visit history...</p>
                     <p>Bulawayo, with a population of approximately 653,337 (2022 census), is a hub of culture and
                         industry, offering a welcoming environment for businesses and visitors.</p>
                 </aside>
-            </div>
+
+                <section class="attractions-grid" id="attractions-grid" aria-label="Attractions">
+                    <!-- JS will insert attraction cards here -->
+                </section>
+            </main>
         </section>
     </main>
+
     <footer class="site-footer">
         <div class="footer-content">
             <section class="footer-section" aria-labelledby="quick-links-heading">
@@ -165,6 +170,7 @@
             <p id="lastModified" class="last-updated"></p>
         </div>
     </footer>
+
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/responsive.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
