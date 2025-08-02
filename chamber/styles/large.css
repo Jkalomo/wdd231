@@ -1045,6 +1045,8 @@
 @media (min-width: 1024px) {
     main {
         max-width: 1600px;
+        padding: 1rem;/* Reduced padding for edge content */
+        margin: 0 auto;
     }
 
     .hero-content {
@@ -1089,6 +1091,7 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1600px;
+        min-height: 0;
     }
 
     .attractions-grid {
@@ -1102,7 +1105,13 @@
         gap: 1.5rem;
         justify-items: stretch;
         width: 100%;
+        min-height: 0;
     }
+
+
+    .attraction-card {
+        min-height: 450px; /* Ensure cards maintain height */
+        }
 }
 
 @media (min-width: 1200px) {
