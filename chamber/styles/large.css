@@ -122,6 +122,8 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: calc(var(--spacing-unit) * 2);
+        box-sizing: border-box;
+        width: 100%;
     }
 
     .skip-link {
@@ -168,6 +170,7 @@
         border-radius: 8px;
         margin-bottom: calc(var(--spacing-unit) * 2);
         overflow: hidden;
+        width: 100%;
     }
 
     .hero picture {
@@ -183,6 +186,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
+        max-height: 600px;
     }
 
     .hero::after {
@@ -849,12 +853,13 @@
         height: auto;
         aspect-ratio: 3/2;
         object-fit: cover;
-        transition: transform 0.3s ease;
-        -webkit-transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .attraction-card:hover img {
         transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         -webkit-transform: scale(1.05);
     }
 
@@ -875,7 +880,7 @@
         padding: 0.5rem 1rem;
         background: var(--secondary);
         color: var(--highlight);
-        border-radius: var(--border-radius);
+        border-radius: var(---border-radius);
         text-decoration: none;
         font-weight: 600;
     }
@@ -1044,10 +1049,10 @@
 
 @media (min-width: 1024px) {
     main {
-        max-width: 1600px !important;
-        padding: 0 !important;
+        max-width: 1600px;
+        padding: 0;
         margin: 0 auto;
-        width: 100% !important;
+        width: 100%;
         box-sizing: border-box;
     }
 
@@ -1078,72 +1083,87 @@
         min-width: 300px;
     }
 
-    .attractions-grid {
-        grid-template-areas:
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
+    .discover-main {
+        padding: 3rem 2rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    /* Enforce full width and height for discover-content */
-    main>.discover-content {
-        display: -ms-grid;
+    .main-wrapper {
         display: grid;
-        grid-template-areas: "grid sidebar";
-        grid-template-columns: 4fr 1fr;
-        gap: 1.5rem;
-        width: 100% !important;
-        max-width: 1600px !important;
+        grid-template-areas:
+            "sidebar card1 card2 card3 card4"
+            "sidebar card5 card6 card7 card8";
+        grid-template-columns: 300px repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        max-width: 1200px;
         margin: 0 auto;
-        min-height: 450px !important;
-        /* Match card height */
+        gap: 1.5rem;
+        width: 100%;
         box-sizing: border-box;
-        padding: 0 !important;
-/* Remove any inherited padding */
+    }
+
+    #visitor-message-container {
+        grid-area: sidebar;
+        background: var(--light);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 1rem;
+        height: fit-content;
+        min-width: 250px;
     }
 
     .attractions-grid {
-        display: -ms-grid;
+        grid-area: grid;
         display: grid;
-        -ms-grid-columns: (1fr)[4];
-        -ms-grid-rows: (1fr)[2];
         grid-template-areas:
             "card1 card2 card3 card4"
             "card5 card6 card7 card8";
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
-        justify-items: stretch;
-        width: 100% !important;
-        min-height: 450px !important;
-        /* Prevent collapse */
-        box-sizing: border-box;
+        width: 100%;
     }
 
-.main-wrapper {
-        flex-direction: row;
-        gap: 2rem;
-        align-items: flex-start;
-        }
+    .attractions-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
 
- .attractions-grid {
-     flex: 3;
-     grid-template-columns: repeat(4, 1fr);
-     grid-template-areas:
-         "a1 a2 a3 a4"
-         "a5 a6 a7 a8";
-  }
-  }
+    .attraction-card:nth-child(1) {
+        grid-area: card1;
+    }
 
-    /* Ensure visit-info aligns without constraining */
-  .visit-info {
-      flex: 1;
-      /* Take less space */
-      max-width: 300px;
-      position: sticky;
-      top: 1;
-      background-color: #f4f4f4;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+    .attraction-card:nth-child(2) {
+        grid-area: card2;
+    }
+
+    .attraction-card:nth-child(3) {
+        grid-area: card3;
+    }
+
+    .attraction-card:nth-child(4) {
+        grid-area: card4;
+    }
+
+    .attraction-card:nth-child(5) {
+        grid-area: card5;
+    }
+
+    .attraction-card:nth-child(6) {
+        grid-area: card6;
+    }
+
+    .attraction-card:nth-child(7) {
+        grid-area: card7;
+    }
+
+    .attraction-card:nth-child(8) {
+        grid-area: card8;
+    }
 }
 
 @media (min-width: 1200px) {
