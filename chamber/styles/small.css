@@ -15,7 +15,6 @@
     --primary-darken: #002A36;
 }
 
-/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,7 +31,6 @@ body {
     flex-direction: column;
 }
 
-/* Skip Link */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -48,7 +46,6 @@ body {
     top: 0;
 }
 
-/* Header */
 .site-header {
     background: var(--primary);
     padding: var(--spacing-unit);
@@ -98,7 +95,6 @@ body {
     opacity: 0.9;
 }
 
-/* Navigation */
 .nav-list {
     list-style: none;
     padding: 0;
@@ -150,7 +146,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Main Content */
 main {
     padding: var(--spacing-unit);
     max-width: 100%;
@@ -190,7 +185,6 @@ main {
     text-decoration: underline;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     min-height: 300px;
@@ -243,7 +237,6 @@ main {
     margin-top: 1rem;
 }
 
-/* Buttons */
 .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -283,7 +276,6 @@ main {
     vertical-align: middle;
 }
 
-/* Cards & Sections */
 .card,
 .events,
 .weather,
@@ -319,7 +311,6 @@ main {
     background: var(--accent);
 }
 
-/* Events */
 .events {
     display: flex;
     flex-direction: column;
@@ -345,7 +336,6 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Weather */
 .weather {
     text-align: center;
 }
@@ -391,7 +381,6 @@ main {
     margin: 0 auto 0.5rem;
 }
 
-/* Spotlights */
 .spotlight-row {
     display: flex;
     gap: 0.75rem;
@@ -419,7 +408,6 @@ main {
     margin: 0 auto 0.5rem;
 }
 
-/* Directory */
 .directory-controls {
     display: flex;
     flex-direction: column;
@@ -499,7 +487,6 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Forms */
 .join-form form {
     display: flex;
     flex-direction: column;
@@ -537,7 +524,6 @@ main {
     background: #8C3503;
 }
 
-/* Footer */
 .site-footer {
     background: var(--primary);
     color: var(--highlight);
@@ -589,7 +575,6 @@ main {
     margin-top: 1rem;
 }
 
-/* Utility Classes */
 .text-center {
     text-align: center;
 }
@@ -602,7 +587,6 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -627,19 +611,21 @@ main {
     }
 }
 
-/* Media Queries */
 @media (max-width: 640px) {
     .discover-content {
+        display: -ms-grid;
         display: grid;
-        grid-template-areas:
-            "grid"
-            "sidebar";
+        grid-template-areas: "grid" "sidebar";
         gap: 1rem;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .attractions-grid {
         grid-area: grid;
+        display: -ms-grid;
         display: grid;
+        -ms-grid-rows: (1fr)[8];
         grid-template-areas:
             "card1"
             "card2"
@@ -650,6 +636,9 @@ main {
             "card7"
             "card8";
         gap: 1rem;
+        justify-items: center;
+        width: 100%;
+        overflow: hidden;
     }
 
     .visit-info {
@@ -666,6 +655,9 @@ main {
         display: flex;
         flex-direction: column;
         min-height: 350px;
+        max-width: 300px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .attraction-card img {
@@ -698,7 +690,6 @@ main {
         outline: 2px solid var(--accent);
     }
 
-    /* Navigation */
     .main-navigation {
         display: none;
     }
@@ -707,7 +698,6 @@ main {
         display: block;
     }
 
-    /* Contact Page */
     .contact-content {
         display: grid;
         grid-template-areas:
@@ -717,7 +707,6 @@ main {
     }
 }
 
-/* Print Styles */
 @media print {
 
     .site-header,

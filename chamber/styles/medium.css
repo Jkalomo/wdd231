@@ -1,22 +1,30 @@
 /* Medium screens (641px–1024px) */
 @media (min-width: 641px) and (max-width: 1024px) {
     .discover-content {
+        display: -ms-grid;
         display: grid;
-        grid-template-areas:
-            "grid sidebar";
+        grid-template-areas: "grid sidebar";
         grid-template-columns: 2fr 1fr;
         gap: 1.5rem;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .attractions-grid {
         grid-area: grid;
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: (1fr)[2];
+        -ms-grid-rows: (1fr)[4];
         grid-template-areas:
             "card1 card2"
             "card3 card4"
             "card5 card6"
             "card7 card8";
         gap: 1.5rem;
+        justify-items: center;
+        width: 100%;
+        overflow:hidden;
     }
 
     .visit-info {
@@ -35,6 +43,8 @@
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         min-height: 400px;
+        max-width: 300px;
+        width: 100%;
     }
 
     .attraction-card img {
@@ -44,11 +54,13 @@
         object-fit: cover;
         border-radius: 4px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .attraction-card img:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        -webkit-transform: scale(1.05);
     }
 
     .attraction-card h2,
