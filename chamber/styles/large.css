@@ -116,7 +116,7 @@
     }
 
     main {
-        max-width: 1200px;
+        max-width: 1600px;
         margin: 0 auto;
         padding: 2rem;
         display: grid;
@@ -798,7 +798,7 @@
         color: var(--primary);
     }
 
-    .discover-content {
+    .discover-content.discover-content {
         display: -ms-grid;
         display: grid;
         grid-template-areas: "grid sidebar";
@@ -1069,7 +1069,7 @@
 
 @media (min-width: 1024px) {
     main {
-        max-width: 1400px;
+        max-width: 1600px;
     }
 
     .hero-content {

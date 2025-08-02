@@ -494,7 +494,6 @@
         grid-template-areas: "grid sidebar";
         grid-template-columns: 3fr 1fr;
         gap: 2rem;
-        max-width: 1200px;
         margin: 0 auto;
     }
 
