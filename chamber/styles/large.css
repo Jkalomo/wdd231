@@ -798,31 +798,6 @@
         color: var(--primary);
     }
 
-    .discover-content.discover-content {
-        display: -ms-grid;
-        display: grid;
-        grid-template-areas: "grid sidebar";
-        grid-template-columns: 4fr 1fr;
-        gap: 2rem;
-        width: 100%;
-        margin: 0 auto;
-        max-width: 1600px;
-    }
-
-    .attractions-grid {
-        grid-area: grid;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: (1fr)[4];
-        -ms-grid-rows: (1fr)[2];
-        grid-template-areas:
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
-        gap: 1.5rem;
-        justify-items: center;
-        width: 100%;
-    }
-
     .visit-info {
         grid-area: sidebar;
         background: var(--light);
@@ -1103,6 +1078,30 @@
         grid-template-areas:
             "card1 card2 card3 card4"
             "card5 card6 card7 card8";
+    }
+
+    .discover-content {
+        display: -ms-grid;
+        display: grid;
+        grid-template-areas: "grid sidebar";
+        grid-template-columns: 4fr 1fr;
+        gap: 1.5rem;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1600px;
+    }
+
+    .attractions-grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (1fr)[4];
+        -ms-grid-rows: (1fr)[2];
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        gap: 1.5rem;
+        justify-items: stretch;
+        width: 100%;
     }
 }
 
