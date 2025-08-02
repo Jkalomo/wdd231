@@ -163,8 +163,8 @@
 
     .btn-success:hover,
     .btn-success:focus {
-        background: color-mix(in srgb, var(--secondary) 90%, black 10%);
-        /* Fixed darken() */
+        background: #923503;
+        /* Fixed: 10% darker than #A63D03 */
         outline: var(--focus-outline);
     }
 
@@ -457,7 +457,7 @@
         margin: 0.5rem 0;
     }
 
-    .member-level--gold不已 .member-level--gold {
+    .member-level--gold {
         background: #f4b400;
         color: #1a1a1a;
     }
