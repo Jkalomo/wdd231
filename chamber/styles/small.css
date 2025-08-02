@@ -613,7 +613,6 @@ main {
 
 @media (max-width: 640px) {
     .discover-content {
-        display: -ms-grid;
         display: grid;
         grid-template-areas: "grid" "sidebar";
         gap: 1rem;
@@ -623,9 +622,7 @@ main {
 
     .attractions-grid {
         grid-area: grid;
-        display: -ms-grid;
         display: grid;
-        -ms-grid-rows: (1fr)[8];
         grid-template-areas:
             "card1"
             "card2"
@@ -635,6 +632,8 @@ main {
             "card6"
             "card7"
             "card8";
+        grid-template-rows: repeat(8, auto);
+        /* Fixed */
         gap: 1rem;
         justify-items: center;
         width: 100%;
