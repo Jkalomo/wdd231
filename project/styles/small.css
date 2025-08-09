@@ -1,0 +1,97 @@
+@media (min-width: 320px) {
+    body {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+        z-index: 1000;
+    }
+
+    .hero h2,
+    .funeral-life h2,
+    .accidental h2,
+    .quote-result h2,
+    .attributions h2 {
+        font-size: 1.75rem;
+    }
+
+    .insurance-types h2,
+    .funeral-life h3,
+    .accidental h3 {
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .card p {
+        font-size: 0.875rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    form {
+        max-width: 300px;
+    }
+
+    form label {
+        font-size: 0.875rem;
+    }
+
+    form input,
+    form select {
+        font-size: 0.875rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .footer-section a,
+    .footer-bottom {
+        font-size: 0.875rem;
+    }
+
+    .modal-content {
+        max-width: 300px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .modal-content p {
+        font-size: 0.875rem;
+    }
+
+    .close-modal {
+        font-size: 0.875rem;
+    }
+}

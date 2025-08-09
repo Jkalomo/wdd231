@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "type": "Funeral Cover Basic",
+        "description": "Covers essential funeral expenses to ease the financial burden.",
+        "benefits": "Up to $5,000 payout, quick claim process, no medical exam.",
+        "cost": "$10-$20/month",
+        "image": "images/basic.jpg",
+        "features": [
+            "Burial costs",
+            "Immediate payout",
+            "No health checks"
+        ],
+        "provider": "ZimCare"
+    },
+    {
+        "id": 2,
+        "type": "Funeral Cover Plus",
+        "description": "Enhanced funeral cover with additional services.",
+        "benefits": "Up to $7,500 payout, includes transport, no medical exam.",
+        "cost": "$15-$25/month",
+        "image": "images/plus.jpg",
+        "features": [
+            "Burial and transport",
+            "Quick payout",
+            "No health checks"
+        ],
+        "provider": "ZimCare"
+    },
+    {
+        "id": 3,
+        "type": "Funeral Cover Premium",
+        "description": "Comprehensive funeral cover for complete peace of mind.",
+        "benefits": "Up to $10,000 payout, full service planning, no medical exam.",
+        "cost": "$20-$30/month",
+        "image": "images/premium.jpg",
+        "features": [
+            "Full funeral planning",
+            "Immediate payout",
+            "No health checks"
+        ],
+        "provider": "ZimCare"
+    },
+    {
+        "id": 4,
+        "type": "Life Cover Standard",
+        "description": "Provides a lump sum for family financial security.",
+        "benefits": "Up to $50,000 payout, flexible terms, optional critical illness.",
+        "cost": "$20-$30/month",
+        "image": "images/standard.jpg",
+        "features": [
+            "Financial security",
+            "Flexible terms",
+            "Critical illness option"
+        ],
+        "provider": "LifeSecure"
+    },
+    {
+        "id": 5,
+        "type": "Life Cover Enhanced",
+        "description": "Higher payout life cover for greater protection.",
+        "benefits": "Up to $75,000 payout, customizable plans, critical illness included.",
+        "cost": "$30-$40/month",
+        "image": "images/enhanced.jpg",
+        "features": [
+            "Higher payout",
+            "Customizable plans",
+            "Critical illness cover"
+        ],
+        "provider": "LifeSecure"
+    },
+    {
+        "id": 6,
+        "type": "Life Cover Elite",
+        "description": "Premium life cover for maximum financial support.",
+        "benefits": "Up to $100,000 payout, flexible terms, full critical illness cover.",
+        "cost": "$40-$50/month",
+        "image": "images/elite.jpg",
+        "features": [
+            "Maximum payout",
+            "Flexible terms",
+            "Full critical illness"
+        ],
+        "provider": "LifeSecure"
+    },
+    {
+        "id": 7,
+        "type": "Accidental Cover Basic",
+        "description": "Covers accidental death or disability with basic support.",
+        "benefits": "Up to $25,000 payout, 24/7 coverage, medical expenses.",
+        "cost": "$10-$20/month",
+        "image": "images/accidental.jpg",
+        "features": [
+            "Accidental death",
+            "Disability support",
+            "Medical expenses"
+        ],
+        "provider": "SafeGuard"
+    },
+    {
+        "id": 8,
+        "type": "Accidental Cover Plus",
+        "description": "Enhanced accidental cover with higher payouts.",
+        "benefits": "Up to $40,000 payout, 24/7 coverage, extended medical expenses.",
+        "cost": "$15-$25/month",
+        "image": "images/coverplus.jpg",
+        "features": [
+            "Higher accidental death",
+            "Disability support",
+            "Extended medical"
+        ],
+        "provider": "SafeGuard"
+    },
+    {
+        "id": 9,
+        "type": "Accidental Cover Premium",
+        "description": "Comprehensive accidental cover for full protection.",
+        "benefits": "Up to $50,000 payout, 24/7 coverage, full medical expenses.",
+        "cost": "$20-$30/month",
+        "image": "images/coverpremium.jpg",
+        "features": [
+            "Maximum accidental death",
+            "Disability support",
+            "Full medical"
+        ],
+        "provider": "SafeGuard"
+    },
+    {
+        "id": 10,
+        "type": "Funeral Cover Family",
+        "description": "Funeral cover for the whole family.",
+        "benefits": "Up to $15,000 payout, includes dependents, no medical exam.",
+        "cost": "$25-$35/month",
+        "image": "images/coverfamily.jpg",
+        "features": [
+            "Family burial costs",
+            "Quick payout",
+            "No health checks"
+        ],
+        "provider": "ZimCare"
+    },
+    {
+        "id": 11,
+        "type": "Life Cover Family",
+        "description": "Life cover for family financial security.",
+        "benefits": "Up to $150,000 payout, includes dependents, critical illness option.",
+        "cost": "$50-$60/month",
+        "image": "images/lifecover.jpg",
+        "features": [
+            "Family financial security",
+            "Customizable plans",
+            "Critical illness"
+        ],
+        "provider": "LifeSecure"
+    },
+    {
+        "id": 12,
+        "type": "Accidental Cover Family",
+        "description": "Accidental cover for the entire family.",
+        "benefits": "Up to $75,000 payout, 24/7 coverage, family medical expenses.",
+        "cost": "$30-$40/month",
+        "image": "images/accover.jpg",
+        "features": [
+            "Family accidental death",
+            "Disability support",
+            "Family medical"
+        ],
+        "provider": "SafeGuard"
+    },
+    {
+        "id": 13,
+        "type": "Funeral Cover Senior",
+        "description": "Funeral cover tailored for seniors.",
+        "benefits": "Up to $8,000 payout, quick claim process, no medical exam.",
+        "cost": "$15-$25/month",
+        "image": "images/funeralsenior.jpg",
+        "features": [
+            "Senior burial costs",
+            "Immediate payout",
+            "No health checks"
+        ],
+        "provider": "ZimCare"
+    },
+    {
+        "id": 14,
+        "type": "Life Cover Senior",
+        "description": "Life cover for seniors with flexible terms.",
+        "benefits": "Up to $60,000 payout, flexible terms, critical illness option.",
+        "cost": "$35-$45/month",
+        "image": "images/lifesenior.jpg",
+        "features": [
+            "Senior financial security",
+            "Flexible terms",
+            "Critical illness"
+        ],
+        "provider": "LifeSecure"
+    },
+    {
+        "id": 15,
+        "type": "Accidental Cover Senior",
+        "description": "Accidental cover designed for seniors.",
+        "benefits": "Up to $30,000 payout, 24/7 coverage, medical expenses.",
+        "cost": "$15-$25/month",
+        "image": "images/accidentalsenior.jpg",
+        "features": [
+            "Senior accidental death",
+            "Disability support",
+            "Medical expenses"
+        ],
+        "provider": "SafeGuard"
+    }
+]

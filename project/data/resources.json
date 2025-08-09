@@ -1,0 +1,39 @@
+{
+    "resources": [
+        {
+            "id": 1,
+            "title": "Understanding Insurance Basics",
+            "description": "A guide to the fundamentals of insurance and why it matters.",
+            "link": "https://example.com/insurance-basics"
+        },
+        {
+            "id": 2,
+            "title": "Financial Planning Guide",
+            "description": "Learn how to plan for your family’s financial future with insurance.",
+            "link": "https://example.com/financial-planning"
+        },
+        {
+            "id": 3,
+            "title": "Insurance Glossary",
+            "description": "Key terms and definitions to understand insurance policies.",
+            "link": "https://example.com/insurance-glossary"
+        }
+    ],
+    "faqs": [
+        {
+            "id": 1,
+            "question": "What is the difference between life and funeral cover?",
+            "answer": "Life cover provides a lump sum for long-term financial security, while funeral cover focuses on immediate burial expenses."
+        },
+        {
+            "id": 2,
+            "question": "Do I need a medical exam for insurance?",
+            "answer": "Funeral cover typically does not require a medical exam, but life cover may, depending on the policy."
+        },
+        {
+            "id": 3,
+            "question": "How are premiums calculated?",
+            "answer": "Premiums depend on factors like age, coverage amount, and policy type. Use our calculator to estimate costs."
+        }
+    ]
+}
