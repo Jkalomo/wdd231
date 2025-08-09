@@ -9,7 +9,7 @@
     <meta name="author" content="Jabulani Kalomo">
     <meta property="og:title" content="Insurance Plans">
     <meta property="og:description"
-        content="Explore accidental, funeral, and life cover options. Compare plans and calculate your premium.">
+        content="Compare accidental, funeral, and life insurance plans. Get a personalized quote and explore resources.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourusername.github.io/wdd231/final/accidental.html">
     <meta property="og:image" content="https://yourusername.github.io/wdd231/final/images/og-image.jpg">
@@ -24,7 +24,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Insurance Awareness</h1>
+            <div class="logo">Insurance Awareness</div>
             <button class="hamburger" aria-label="Toggle navigation">☰</button>
             <nav class="nav-menu">
                 <ul>
@@ -43,7 +43,7 @@
                 <div id="accidental-cards"></div>
             </div>
         </section>
-        <section class="insurance-types">
+        <section class="funeral-life">
             <div class="container">
                 <h2>Funeral and Life Cover Comparison</h2>
                 <div id="funeral-life-cards"></div>
@@ -64,38 +64,37 @@
                 <h2>Calculate Your Premium</h2>
                 <form id="quote-form">
                     <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" min="18" max="100" required>
-                    <label for="coverType">Cover Type:</label>
-                    <select id="coverType" name="coverType" required>
+                    <input type="number" id="age" name="age" required>
+                    <label for="cover-type">Cover Type:</label>
+                    <select id="cover-type" name="cover-type" required>
+                        <option value="" disabled selected>Select Cover Type</option>
                         <option value="funeral">Funeral</option>
                         <option value="life">Life</option>
                         <option value="accidental">Accidental</option>
                     </select>
-                    <label for="coverageAmount">Coverage Amount ($):</label>
-                    <input type="number" id="coverageAmount" name="coverageAmount" min="1000" step="1000" required>
-                    <input type="hidden" name="timestamp" id="timestamp">
+                    <label for="coverage-amount">Coverage Amount ($):</label>
+                    <input type="number" id="coverage-amount" name="coverage-amount" required>
                     <button type="submit">Get Quote</button>
                 </form>
                 <div id="quote-result"></div>
             </div>
         </section>
-        <section id="resources" class="resources">
+        <section class="resources">
             <div class="container">
                 <h2>Resources</h2>
                 <div id="resources-list"></div>
             </div>
         </section>
-        <section id="faqs" class="faqs">
+        <section class="faqs">
             <div class="container">
                 <h2>FAQs</h2>
                 <div id="faqs-list"></div>
             </div>
         </section>
-        <div id="insurance-modal" class="modal" aria-hidden="true">
+        <div class="modal" id="insurance-modal">
             <div class="modal-content">
-                <span class="close-modal" aria-label="Close modal">&times;</span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-description"></p>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <div id="modal-content"></div>
             </div>
         </div>
     </main>
