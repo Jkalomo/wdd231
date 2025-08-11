@@ -452,69 +452,65 @@ main {
 }
 
 .member-card {
-    padding: 1.5rem;
     background: var(--highlight);
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin-bottom: var(--spacing-unit);
-}
-
-.member-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: var(--spacing-unit);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .member-card img {
     width: var(--icon-size);
     height: var(--icon-size);
     object-fit: contain;
-    border-radius: 6px;
-    margin: 0 auto 1rem;
-    display: block;
+    margin-bottom: var(--spacing-unit);
 }
 
-.member-content {
-    text-align: center;
+.member-card h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary);
 }
 
-.member-level {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.member-card p {
+    font-size: var(--font-size-body);
+    color: var(--gray);
 }
 
-.join-form form {
+.join-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 500px;
 }
 
 .join-form label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.9rem;
+    font-size: var(--font-size-body);
     color: var(--primary);
+    font-weight: 600;
 }
 
 .join-form input,
 .join-form select,
 .join-form textarea {
-    padding: 0.75rem;
-    border: 1px solid var(--gray);
-    border-radius: 6px;
-    font-size: 0.9rem;
-    background: var(--highlight);
+    padding: 0.5rem;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    font-size: var(--font-size-body);
+    background: var(--light);
+    color: var(--dark);
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+    outline: 2px solid var(--accent);
 }
 
 .join-form input[type="submit"] {
     background: var(--secondary);
     color: var(--highlight);
     border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
     font-weight: 600;
     margin-top: 0.5rem;
     transition: all 0.3s ease;
@@ -689,11 +685,11 @@ main {
         outline: 2px solid var(--accent);
     }
 
-    .main-navigation {
+    #nav {
         display: none;
     }
 
-    .main-navigation.active {
+    #nav.show {
         display: block;
     }
 

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const attractionsGrid = document.querySelector('.attractions-grid');
     const visitMessage = document.querySelector('#visit-message');
+    // Add loading message dynamically to avoid null error
+    attractionsGrid.innerHTML = '<p class="loading-message">Loading attractions...</p>';
     const loadingMessage = attractionsGrid.querySelector('.loading-message');
 
     console.log('Script loaded and DOM ready');
@@ -36,19 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         attractions.forEach((attraction, index) => {
             const card = document.createElement('article');
             card.classList.add('attraction-card');
-            card.style.gridArea = `card${index + 1}`; // Assign named grid areas
+            card.style.gridArea = `card${index + 1}`;
             card.innerHTML = `
-            <h2>${attraction.name}</h2>
-            <figure>
-                <img src="${attraction.image}" alt="${attraction.name}" loading="lazy">
-            </figure>
-            <address>${attraction.address}</address>
-            <p>${attraction.description}</p>
-            <a href="${attraction.url || 'contact.html'}" class="btn btn-success" target="_blank" rel="noopener noreferrer" role="button">Learn More</a>
-        `;
+                <h2>${attraction.name}</h2>
+                <figure>
+                    <img src="${attraction.image}" alt="${attraction.name}" loading="lazy" onerror="this.src='images/placeholder.webp'; console.warn('Failed to load image: ${attraction.image}')">
+                </figure>
+                <address>${attraction.address}</address>
+                <p>${attraction.description}</p>
+                <a href="${attraction.url || 'contact.html'}" class="btn btn-success" target="_blank" rel="noopener noreferrer" role="button">Learn More</a>
+            `;
             attractionsGrid.appendChild(card);
         });
-        
     }
 
     // Handle visit messages using localStorage

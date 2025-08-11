@@ -31,6 +31,11 @@
     <noscript>
         <link rel="stylesheet" href="styles/noscript.css">
     </noscript>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://jkalomo.github.io; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=()">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
@@ -81,7 +86,7 @@
                 <div class="hero-actions">
                     <a href="join.html" class="btn btn-success cta" role="button">
                         <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
+                            <path fill="currentColor"
                                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                         </svg>
                         Join Now

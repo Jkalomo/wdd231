@@ -4,7 +4,7 @@
         "address": "123 Jason Moyo St, Bulawayo, Zimbabwe",
         "phone": "+263 9 123 456",
         "website": "https://bulawayotechsolutions.co.zw",
-        "image": "images/btech.png",
+        "image": "images/btech.jpg",
         "membership": 3,
         "industry": "Technology Services"
     },
@@ -13,7 +13,7 @@
         "address": "456 Leopold Takawira Ave, Bulawayo, Zimbabwe",
         "phone": "+263 9 123 457",
         "website": "https://zimbabwetextiles.co.zw",
-        "image": "images/textile.png",
+        "image": "images/textile.jpg",
         "membership": 2,
         "industry": "Textile Manufacturing"
     },
@@ -22,7 +22,7 @@
         "address": "789 12th Ave, Bulawayo, Zimbabwe",
         "phone": "+263 9 123 458",
         "website": "https://matoposecotours.co.zw",
-        "image": "images/matopos.png",
+        "image": "images/matopos.jpg",
         "membership": 1,
         "industry": "Tourism"
     },
@@ -31,7 +31,7 @@
         "address": "101 George Silundika St, Bulawayo, Zimbabwe",
         "phone": "+263 9 123 459",
         "website": "https://bulawayobakery.co.zw",
-        "image": "images/bakery.png",
+        "image": "images/bakery.jpg",
         "membership": 3,
         "industry": "Food Services"
     },
