@@ -1,34 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.getElementById('menu');
-    const navigation = document.getElementById('nav');
+    console.log('Responsive.js loaded at', new Date().toLocaleString());
+    const menuButton = document.querySelector('#menu');
+    const nav = document.querySelector('#nav');
 
-    console.log('responsive.js loaded. menuButton:', menuButton, 'navigation:', navigation);
-
-    if (navigation) {
-        navigation.classList.add('enabled');
+    if (!menuButton) {
+        console.error('Error: Menu button (#menu) not found in DOM');
+        return;
+    }
+    if (!nav) {
+        console.error('Error: Navigation (#nav) not found in DOM');
+        return;
     }
 
-    if (menuButton && navigation) {
-        menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            console.log('Menu clicked. isExpanded:', isExpanded);
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-            navigation.classList.toggle('show');
-            menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
-        });
+    console.log('Menu button and nav found. Setting up click event listener.');
+    menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        console.log('Menu clicked. Current aria-expanded:', isExpanded);
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        nav.classList.toggle('show');
+        console.log('Nav classList after toggle:', nav.classList.toString());
+        console.log('Nav display style:', window.getComputedStyle(nav).display);
+    });
 
-        const navLinks = navigation.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    console.log('Nav link clicked, closing menu');
-                    navigation.classList.remove('show');
-                    menuButton.setAttribute('aria-expanded', 'false');
-                    menuButton.setAttribute('aria-label', 'Open navigation menu');
-                }
-            });
-        });
-    } else {
-        console.error('Menu or navigation element not found');
-    }
+    // Fallback: Check if nav is visible on larger screens
+    window.addEventListener('resize', () => {
+        console.log('Window resized. Width:', window.innerWidth);
+        if (window.innerWidth > 640 && nav.classList.contains('show')) {
+            console.log('Removing show class for larger screens');
+            nav.classList.remove('show');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
 });

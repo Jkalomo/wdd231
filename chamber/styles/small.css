@@ -99,14 +99,11 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none;
 }
 
-.main-navigation.enabled {
-    display: block;
+.main-navigation {
     background: var(--light);
     padding: var(--spacing-unit);
-    animation: slideDown 0.3s ease-out;
 }
 
 .nav-link {
@@ -629,7 +626,6 @@ main {
             "card7"
             "card8";
         grid-template-rows: repeat(8, auto);
-        /* Fixed */
         gap: 1rem;
         justify-items: center;
         width: 100%;
@@ -686,11 +682,14 @@ main {
     }
 
     #nav {
-        display: none;
+        display: none !important;
     }
 
     #nav.show {
-        display: block;
+        display: block !important;
+        background: var(--light);
+        padding: var(--spacing-unit);
+        animation: slideDown 0.3s ease-out;
     }
 
     .contact-content {
